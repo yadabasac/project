@@ -1,0 +1,3 @@
+The datasets to run the model can be downloaded from the below Google Drive.
+
+https://drive.google.com/drive/folders/1ulqqEH9WGAiQfBv6bjRhfEMQl6PiikWg?usp=sharing
