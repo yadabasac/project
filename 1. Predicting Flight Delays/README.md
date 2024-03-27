@@ -12,6 +12,9 @@ Flight delays pose significant economic challenges to the aviation industry, nec
 
 ## 2. Datasets
 
+
+The dataset utilized for this project comprises flight data sourced from the U.S. Department of Transportation. Due to computational constraints, a smaller sample dataset provided by IBM was chosen, focusing on flight data from six major airlines: Southwest, Delta, American Airlines, Republic, JetBlue, and Alaska, spanning January 2018 to December 2020. Additionally, weather data from the Integrated Surface Database (ISD) of the National Oceanic and Atmospheric Administration (NOAA) was integrated, considering attributes such as windspeed, cloud height, visibility, temperature, rain, and snow at both departure and arrival airports. The primary classification variable is arrival delay, categorized as 1 for delays exceeding 15 minutes and 0 otherwise. Graphical analysis reveals American Airlines as the leading carrier in terms of flight volume, with Delta Airlines demonstrating the lowest delay percentage, while JetBlue struggles the most with delays. Analysis of flight volumes by day of the week highlights weekdays as busier periods, with Thursdays and Fridays exhibiting the highest delay percentages. Furthermore, there's an observed increase in flight activity during winter months, notably January and March, and a concentration of delays around the 18th to 20th days of the month, suggesting potential areas for advanced planning by both passengers and airlines.
+
 ## 3. Code Structure
 
 ## 4. Results and Evaluation
