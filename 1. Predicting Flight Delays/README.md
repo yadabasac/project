@@ -20,3 +20,41 @@ The dataset utilized for this project comprises flight data sourced from the U.S
 The data preprocessing phase involved several steps to prepare the datasets for machine learning analysis. Weather data, available for individual airports and years, was merged after being downloaded and cleaned, with missing values imputed using the mode. Similarly, the flight dataset was refined by selecting six major airlines and reducing the number of airports to 39 to alleviate processing burdens. After merging the datasets and converting categorical variables to dummy variables through one-hot encoding, the dataset consisted of 53,413 rows, 178 attributes, and one dependent variable, Arrival Delay. Due to class imbalance in the dependent variable, two techniques, Naïve Random Over-Sampling and Synthetic Minority Over-Sampling Technique (SMOTE), were employed, increasing the samples with Arrival Delay equaling 1 from 10,095 to 43,318. Further, Principal Component Analysis (PCA) and feature selection were applied to reduce the number of features, with PCA revealing an elbow point at 50 components. Testing showed that datasets with reduced features (50 features) produced comparable accuracy (81%) to the original dataset (178 features) using Random Forests. Combining K-Fold Cross Validation (n=5) with Random Forests, various dataset combinations were tested, with the 5th dataset (PCA followed by Naïve Random Over-Sampling) exhibiting similar performance to the 7th dataset. Consequently, the 5th dataset was chosen for selecting the best machine learning algorithms. This dataset combination strategy ensures improved model performance while mitigating class imbalance and computational burdens.
 
 ## 4. Results and Evaluation
+
+The machine learning models were applied to the dataset, including Random Forests, Logistic Regression, Decision Trees, Naïve Bayes, SVM, and Neural Networks. Each model's performance was evaluated based on accuracy, precision, and recall for both training and test data. The computer specifications used for these computations were an 11th Gen Intel(R) Core (TM) i5-1135G7 @ 2.40GHz processor with 8.00 GB Installed RAM.
+
+Random Forests:
+
+When using the dataset with PCA only, the model showed poor recall (1%) without data balancing. However, with the balanced dataset (PCA first, followed by Naïve Random), significant improvement was observed, with a recall of 97% for the test data.
+
+Decision Trees:
+
+Overfitting was observed with the model trained on the dataset with PCA only, resulting in an accuracy of 70% for the test data. However, when using the balanced dataset, the accuracy improved to 86%.
+
+Logistic Regression:
+
+Both balanced and imbalanced datasets produced similar accuracy (81%) for the test data. However, when using the balanced dataset, precision and recall for the minority class (Arrival Delay = 1) decreased compared to the imbalanced dataset.
+
+Naïve Bayes:
+
+Similar to Logistic Regression, Naïve Bayes showed higher accuracy (80%) with the imbalanced dataset compared to the balanced dataset (62%).
+
+SVM:
+
+The SVM model exhibited high accuracy (99%) with a long training time, showing the model's ability to generalize well to new data. Using the balanced dataset, the model produced an accuracy of over 99%.
+
+Neural Networks:
+
+Various configurations were tested, with the optimal configuration achieving a cross-validated score of 0.89. The model utilized the balanced dataset, showcasing its effectiveness in classifying new data.
+
+Top 3 Performing Models:
+
+SVM, Random Forests, and Neural Networks emerged as the top-performing models based on mean scores from K-Fold Cross Validation. Random Forests stood out due to its relatively high accuracy and shorter computation time compared to SVM.
+
+Methodological Contributions:
+
+Balancing the dataset using Naïve Random Over-Sampling significantly improved results, especially recall values. Primary Component Analysis proved slightly better than feature selection for reducing the number of features. The order of preprocessing steps did not affect the results significantly.
+
+Conclusions:
+
+Random Forests emerged as the best model for predicting flight delays, balancing accuracy and computational efficiency. Future work could explore predicting flight delays in other countries and leveraging cloud computation for larger datasets from the Department of Transportation.
