@@ -1,6 +1,6 @@
-# Predicting Flight Delays in the United States Using Machine Learning Algorithms
+# Predicting Flight Delays in the United States Using Machine Learning Algorithms (Still in progress)
 
-## Contencts
+## Contents
 
 ## 1. Introduction
 
