@@ -62,8 +62,7 @@ Graph 1 reveals American Airlines as the leading carrier in terms of flight volu
 Analysis of flight volumes by day of the week highlights weekdays as busier periods, with Thursdays and Fridays exhibiting the highest delay percentages.
 
 **Graph 3:**
-
-
+![image](https://github.com/yadabasac/project/assets/129697541/00b9c3c1-44ce-4c1e-8228-e0a7c86954e2)
 
 
 ## 3. Code Structure
