@@ -18,7 +18,7 @@ This project focuses on predicting flight delays for six major US airlines using
 ## 2. Data
 ## 2.1 Data Source
 
-The dataset utilized for this project comprises flight data sourced from the U.S. Department of Transportation. Due to computational constraints, a smaller sample dataset focusing on flight data from six major airlines: Southwest, Delta, American Airlines, Republic, JetBlue, and Alaska, spanning January 2018 to December 2020. Flight data from Department of Transportation can be downloaded [here.](https://www.transtats.bts.gov/DL_SelectFields.aspx?gnoyr_VQ=FGJ&QO_fu146_anzr=b0-gvzr/)
+The dataset utilized for this project comprises flight data sourced from the U.S. Department of Transportation. Due to computational constraints, a smaller sample dataset (containing 53,413 rows) focusing on flight data from six major airlines: Southwest, Delta, American Airlines, Republic, JetBlue, and Alaska, spanning January 2018 to December 2020. Flight data from Department of Transportation can be downloaded [here.](https://www.transtats.bts.gov/DL_SelectFields.aspx?gnoyr_VQ=FGJ&QO_fu146_anzr=b0-gvzr/)
 
 Additionally, weather data from the Integrated Surface Database (ISD) of the National Oceanic and Atmospheric Administration (NOAA) was integrated. Weather data can be downloaded [here.](https://www.ncei.noaa.gov/access/search/data-search/global-hourly/)
 
