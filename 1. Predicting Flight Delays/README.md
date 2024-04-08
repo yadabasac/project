@@ -1,10 +1,11 @@
 # Predicting Flight Delays in the United States Using Machine Learning Algorithms (Still in progress)
 
 ## Contents
-1. Introduction
-2. Datasets
+1. Project Overview
+2. Data
 3. Code Structure
 4. Results and Evaluation
+5. Future Work
 
 ## 1. Introduction
 
