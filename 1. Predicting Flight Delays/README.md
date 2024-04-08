@@ -24,26 +24,26 @@ Additionally, weather data from the Integrated Surface Database (ISD) of the Nat
 
 ## 2.2 Data Dictionary
 
+The target variable is Arrival Delay, which is set to 1 if a flight is 15 minutes or more or 0 otherwise.
 List of attributes used in this study is as follows:
 
 | Attribute  | Description |
 | ------------- | ------------- |
-| Arrival Delay  | Arrival Delay Indicator, 1 if delayed 15 minutes or more or 0 otherwise  |
-| Year  | Year of flight departure date  |
-| Month  | Month of flight departure date  |
-| Day of Month  | Day of month of flight departure date  |
-| Day of Week  | Day of week of flight departure date  |
-| Airline  | Airline name  |
-| Origin Airport  | Name of departure airport  |
-| Destination Airport  | Name of arrival airport  |
-| Departure Time Bulk  | Departure time block, hourly intervals  |
-| Arrival Time Bulk  | Arrival time block, hourly intervals  |
-| Windspeed  | Windspeed at both departure and arrival airports  |
-| Cloud height  | Cloud height at both departure and arrival airports  |
-| Visibility  | The horizontal distance at which an object can be seen and identified at both airports  |
-| Temperature  | The temperature of the air at both airports  |
-| Rain  |  The depth of rain measured at both airports |
-| Snow  | The depth of snow measured at both airports  |
+| 1. Year  | Year of flight departure date  |
+| 2. Month  | Month of flight departure date  |
+| 3. Day of Month  | Day of month of flight departure date  |
+| 4. Day of Week  | Day of week of flight departure date  |
+| 5. Airline  | Airline name  |
+| 6. Origin Airport  | Name of departure airport  |
+| 7. Destination Airport  | Name of arrival airport  |
+| 8. Departure Time Bulk  | Departure time block, hourly intervals  |
+| 9. Arrival Time Bulk  | Arrival time block, hourly intervals  |
+| 10. Windspeed  | Windspeed at both departure and arrival airports  |
+| 11. Cloud height  | Cloud height at both departure and arrival airports  |
+| 12. Visibility  | The horizontal distance at which an object can be seen and identified at both airports  |
+| 13. Temperature  | The temperature of the air at both airports  |
+| 14. Rain  |  The depth of rain measured at both airports |
+| 15. Snow  | The depth of snow measured at both airports  |
 
 
 ## 2.3 Exploratory Data Analysis
