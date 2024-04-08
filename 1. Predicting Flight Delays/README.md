@@ -7,6 +7,7 @@
 3. Code Structure
 4. Results and Evaluation
 5. Future Work
+6. References
 
 ## 1. Project Overview
 
@@ -15,21 +16,29 @@ This project focuses on predicting flight delays for six major US airlines using
 ## 2. Data
 ## 2.1 Data Source
 
-The dataset utilized for this project comprises flight data sourced from the U.S. Department of Transportation. Due to computational constraints, a smaller sample dataset provided by IBM was chosen, focusing on flight data from six major airlines: Southwest, Delta, American Airlines, Republic, JetBlue, and Alaska, spanning January 2018 to December 2020. Flight data from Department of Transportation can be downloaded [here](https://www.transtats.bts.gov/DL_SelectFields.aspx?gnoyr_VQ=FLL&QO_fu146_anzr=/)
+The dataset utilized for this project comprises flight data sourced from the U.S. Department of Transportation. Due to computational constraints, a smaller sample dataset provided by IBM was chosen, focusing on flight data from six major airlines: Southwest, Delta, American Airlines, Republic, JetBlue, and Alaska, spanning January 2018 to December 2020. Flight data from Department of Transportation can be downloaded [here.](https://www.transtats.bts.gov/DL_SelectFields.aspx?gnoyr_VQ=FLL&QO_fu146_anzr=/)
 
-Additionally, weather data from the Integrated Surface Database (ISD) of the National Oceanic and Atmospheric Administration (NOAA) was integrated. Weather data can be downloaded [here](https://www.ncei.noaa.gov/access/search/data-search/global-hourly/)
+Additionally, weather data from the Integrated Surface Database (ISD) of the National Oceanic and Atmospheric Administration (NOAA) was integrated. Weather data can be downloaded [here.](https://www.ncei.noaa.gov/access/search/data-search/global-hourly/)
 
-(Table of attributes)
+## 2.2 Data Dictionary
 
-## 2.2 Data Preprocessing
+List of attributes used in this study is as follows:
 
-The data preprocessing phase involved several steps to prepare the datasets for machine learning analysis. Weather data, available for individual airports and years, was merged after being downloaded and cleaned, with missing values imputed using the mode. Similarly, the flight dataset was refined by selecting six major airlines and reducing the number of airports to 39 to alleviate processing burdens. After merging the datasets and converting categorical variables to dummy variables through one-hot encoding, the dataset consisted of 53,413 rows, 178 attributes, and one dependent variable, Arrival Delay. Due to class imbalance in the dependent variable, two techniques, Naïve Random Over-Sampling and Synthetic Minority Over-Sampling Technique (SMOTE), were employed, increasing the samples with Arrival Delay equaling 1 from 10,095 to 43,318. Further, Principal Component Analysis (PCA) and feature selection were applied to reduce the number of features, with PCA revealing an elbow point at 50 components. Testing showed that datasets with reduced features (50 features) produced comparable accuracy (81%) to the original dataset (178 features) using Random Forests. Combining K-Fold Cross Validation (n=5) with Random Forests, various dataset combinations were tested, with the 5th dataset (PCA followed by Naïve Random Over-Sampling) exhibiting similar performance to the 7th dataset. Consequently, the 5th dataset was chosen for selecting the best machine learning algorithms. This dataset combination strategy ensures improved model performance while mitigating class imbalance and computational burdens.
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
+
 
 ## 2.3 Exploratory Data Analysis
 
 Graphical analysis reveals American Airlines as the leading carrier in terms of flight volume, with Delta Airlines demonstrating the lowest delay percentage, while JetBlue struggles the most with delays. Analysis of flight volumes by day of the week highlights weekdays as busier periods, with Thursdays and Fridays exhibiting the highest delay percentages. Furthermore, there's an observed increase in flight activity during winter months, notably January and March, and a concentration of delays around the 18th to 20th days of the month, suggesting potential areas for advanced planning by both passengers and airlines.
 
 ## 3. Code Structure
+
+## 2.2 Data Preprocessing
+
+The data preprocessing phase involved several steps to prepare the datasets for machine learning analysis. Weather data, available for individual airports and years, was merged after being downloaded and cleaned, with missing values imputed using the mode. Similarly, the flight dataset was refined by selecting six major airlines and reducing the number of airports to 39 to alleviate processing burdens. After merging the datasets and converting categorical variables to dummy variables through one-hot encoding, the dataset consisted of 53,413 rows, 178 attributes, and one dependent variable, Arrival Delay. Due to class imbalance in the dependent variable, two techniques, Naïve Random Over-Sampling and Synthetic Minority Over-Sampling Technique (SMOTE), were employed, increasing the samples with Arrival Delay equaling 1 from 10,095 to 43,318. Further, Principal Component Analysis (PCA) and feature selection were applied to reduce the number of features, with PCA revealing an elbow point at 50 components. Testing showed that datasets with reduced features (50 features) produced comparable accuracy (81%) to the original dataset (178 features) using Random Forests. Combining K-Fold Cross Validation (n=5) with Random Forests, various dataset combinations were tested, with the 5th dataset (PCA followed by Naïve Random Over-Sampling) exhibiting similar performance to the 7th dataset. Consequently, the 5th dataset was chosen for selecting the best machine learning algorithms. This dataset combination strategy ensures improved model performance while mitigating class imbalance and computational burdens.
 
 ## 4. Results and Evaluation
 
@@ -70,3 +79,7 @@ Balancing the dataset using Naïve Random Over-Sampling significantly improved r
 Conclusions:
 
 Random Forests emerged as the best model for predicting flight delays, balancing accuracy and computational efficiency. Future work could explore predicting flight delays in other countries and leveraging cloud computation for larger datasets from the Department of Transportation.
+
+## 5. Future Work
+
+## 6. References
