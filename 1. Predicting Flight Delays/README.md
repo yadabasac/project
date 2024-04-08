@@ -24,10 +24,24 @@ Additionally, weather data from the Integrated Surface Database (ISD) of the Nat
 
 List of attributes used in this study is as follows:
 
-| First Header  | Second Header |
+| Attributes  | Description |
 | ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+| Arrival Delay  | Content Cell  |
+| Year  | Content Cell  |
+| Month  | Content Cell  |
+| Day of Month  | Content Cell  |
+| Day of Week  | Content Cell  |
+| Airlines  | Content Cell  |
+| Origin Airport  | Content Cell  |
+| Destination Airport  | Content Cell  |
+| Departure Time Bulk  | Content Cell  |
+| Arrival Time Bulk  | Content Cell  |
+| Windspeed  | Content Cell  |
+| Cloud height  | Content Cell  |
+| Visibility  | Content Cell  |
+| Temperature  | Content Cell  |
+| Rain  | Content Cell  |
+| Snow  | Content Cell  |
 
 
 ## 2.3 Exploratory Data Analysis
