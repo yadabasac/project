@@ -61,7 +61,7 @@ Analysis of flight volumes by day of the week highlights weekdays as busier peri
 
 **Graph 3:**
 ![image](https://github.com/yadabasac/project/assets/129697541/dc1610ca-a765-47bd-be2a-4f91302a48dc)
-Furthermore, there's an observed increase in flight activity during winter months, notably January and March.
+Graph 3 shows that there's an observed increase in flight activity during winter months, notably January and March.
 
 ## 3. Code Structure
 
