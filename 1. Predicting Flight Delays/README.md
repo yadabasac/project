@@ -24,7 +24,7 @@ Additionally, weather data from the Integrated Surface Database (ISD) of the Nat
 
 ## 2.2 Data Dictionary
 
-The target variable is Arrival Delay, which is set to 1 if a flight is 15 minutes or more or 0 otherwise.
+The target variable is Arrival Delay, which is set to 1 if a flight is delayed 15 minutes or more or 0 otherwise.
 List of attributes used in this study is as follows:
 
 | Attribute  | Description |
