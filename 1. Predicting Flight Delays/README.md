@@ -9,6 +9,8 @@
 5. Future Work
 6. References
 
+![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising a tentacle.]([https://myoctocat.com/assets/images/base-octocat.svg](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.newsbytesapp.com%2Fnews%2Fbusiness%2Fwhat-compensation-can-you-claim-for-canceled-or-delayed-flight%2Fstory&psig=AOvVaw19QwsFJ8aNrFL8sJGzaG43&ust=1712701175901000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCPjB46TTs4UDFQAAAAAdAAAAABAE))
+
 ## 1. Project Overview
 
 This project focuses on predicting flight delays for six major US airlines using machine learning models. Delayed aircraft are estimated to have cost the airlines several billion dollars in additional expense. Delays also drive the need for extra gates and ground personnel and impose costs on airline customers (including shippers) in the form of lost productivity, wages and goodwill. Results indicate the models' ability to accurately forecast delays, with improvements noted through data balancing and feature reduction. Such insights are pivotal for crafting more effective air traffic management strategies, curbing delays, and their economic ramifications. 
