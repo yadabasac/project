@@ -9,9 +9,7 @@
 5. Future Work
 6. References
 
-![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising a tentacle.](https://i.cdn.newsbytesapp.com/images/l69220240116183655.jpeg?tr=w-720)
-
-https://i.cdn.newsbytesapp.com/images/l69220240116183655.jpeg?tr=w-720
+![Screenshot of a information board](https://i.cdn.newsbytesapp.com/images/l69220240116183655.jpeg?tr=w-720)
 
 ## 1. Project Overview
 
