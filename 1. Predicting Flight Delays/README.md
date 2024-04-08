@@ -27,6 +27,7 @@ Additionally, weather data from the Integrated Surface Database (ISD) of the Nat
 The target variable is Arrival Delay, which is set to 1 if a flight is delayed 15 minutes or more or 0 otherwise.
 List of attributes used in this study is as follows:
 
+**Table 1:**
 | Attribute  | Description |
 | ------------- | ------------- |
 | 1. Year  | Year of flight departure date  |
@@ -52,6 +53,9 @@ List of attributes used in this study is as follows:
 **Graph 1:**
 
 ![image](https://github.com/yadabasac/project/assets/129697541/078eceb4-8ce6-4412-b203-06d2447d0eca)
+
+**Graph 2:**
+![image](https://github.com/yadabasac/project/assets/129697541/a3aa9619-4083-492e-b964-845b05ceb244)
 
 
 Graphical analysis reveals American Airlines as the leading carrier in terms of flight volume, with Delta Airlines demonstrating the lowest delay percentage, while JetBlue struggles the most with delays. Analysis of flight volumes by day of the week highlights weekdays as busier periods, with Thursdays and Fridays exhibiting the highest delay percentages. Furthermore, there's an observed increase in flight activity during winter months, notably January and March, and a concentration of delays around the 18th to 20th days of the month, suggesting potential areas for advanced planning by both passengers and airlines.
