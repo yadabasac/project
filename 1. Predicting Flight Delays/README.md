@@ -48,7 +48,7 @@ List of attributes used in this study is as follows:
 
 ## 2.3 Exploratory Data Analysis
 
-![Screenshot of number of flights by airline](https://drive.google.com/file/d/1xo1rS_6qgXXX3pY8ejb_I1ABxI-4ZMGh/view?usp=sharing/)
+![image](https://github.com/yadabasac/project/assets/129697541/078eceb4-8ce6-4412-b203-06d2447d0eca)
 
 
 Graphical analysis reveals American Airlines as the leading carrier in terms of flight volume, with Delta Airlines demonstrating the lowest delay percentage, while JetBlue struggles the most with delays. Analysis of flight volumes by day of the week highlights weekdays as busier periods, with Thursdays and Fridays exhibiting the highest delay percentages. Furthermore, there's an observed increase in flight activity during winter months, notably January and March, and a concentration of delays around the 18th to 20th days of the month, suggesting potential areas for advanced planning by both passengers and airlines.
