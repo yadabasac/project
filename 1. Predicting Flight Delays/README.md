@@ -26,7 +26,7 @@ List of attributes used in this study is as follows:
 
 | Attribute  | Description |
 | ------------- | ------------- |
-| Arrival Delay  | Arrival Delay Indicator, 1 if delayed 15 Minutes or More or 0 otherwise  |
+| Arrival Delay  | Arrival Delay Indicator, 1 if delayed 15 minutes or more or 0 otherwise  |
 | Year  | Year of flight departure date  |
 | Month  | Month of flight departure date  |
 | Day of Month  | Day of month of flight departure date  |
@@ -34,14 +34,14 @@ List of attributes used in this study is as follows:
 | Airline  | Airline name  |
 | Origin Airport  | Name of departure airport  |
 | Destination Airport  | Name of arrival airport  |
-| Departure Time Bulk  | Departure Time Block, Hourly Intervals  |
-| Arrival Time Bulk  | Arrival Time Block, Hourly Intervals  |
+| Departure Time Bulk  | Departure time block, hourly intervals  |
+| Arrival Time Bulk  | Arrival time block, hourly intervals  |
 | Windspeed  | Windspeed at both departure and arrival airports  |
 | Cloud height  | Cloud height at both departure and arrival airports  |
 | Visibility  | The horizontal distance at which an object can be seen and identified at both airports  |
 | Temperature  | The temperature of the air at both airports  |
 | Rain  |  The depth of rain measured at both airports |
-| Snow  | The depth of snow measured at the time of an observation.  |
+| Snow  | The depth of snow measured at both airports  |
 
 
 ## 2.3 Exploratory Data Analysis
