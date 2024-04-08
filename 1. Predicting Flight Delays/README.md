@@ -26,22 +26,22 @@ List of attributes used in this study is as follows:
 
 | Attribute  | Description |
 | ------------- | ------------- |
-| Arrival Delay  | Content Cell  |
-| Year  | Content Cell  |
-| Month  | Content Cell  |
-| Day of Month  | Content Cell  |
-| Day of Week  | Content Cell  |
-| Airlines  | Content Cell  |
-| Origin Airport  | Content Cell  |
-| Destination Airport  | Content Cell  |
-| Departure Time Bulk  | Content Cell  |
-| Arrival Time Bulk  | Content Cell  |
-| Windspeed  | Content Cell  |
-| Cloud height  | Content Cell  |
-| Visibility  | Content Cell  |
-| Temperature  | Content Cell  |
-| Rain  | Content Cell  |
-| Snow  | Content Cell  |
+| Arrival Delay  | Arrival Delay Indicator, 1 if delayed 15 Minutes or More or 0 otherwise  |
+| Year  | Year of flight departure date  |
+| Month  | Month of flight departure date  |
+| Day of Month  | Day of month of flight departure date  |
+| Day of Week  | Day of week of flight departure date  |
+| Airline  | Airline name  |
+| Origin Airport  | Name of departure airport  |
+| Destination Airport  | Name of arrival airport  |
+| Departure Time Bulk  | Departure Time Block, Hourly Intervals  |
+| Arrival Time Bulk  | Arrival Time Block, Hourly Intervals  |
+| Windspeed  | Windspeed at both departure and arrival airports  |
+| Cloud height  | Cloud height at both departure and arrival airports  |
+| Visibility  | The horizontal distance at which an object can be seen and identified at both airports  |
+| Temperature  | The temperature of the air at both airports  |
+| Rain  |  The depth of rain measured at both airports |
+| Snow  | The depth of snow measured at the time of an observation.  |
 
 
 ## 2.3 Exploratory Data Analysis
