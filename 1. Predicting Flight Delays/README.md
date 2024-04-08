@@ -24,7 +24,7 @@ Additionally, weather data from the Integrated Surface Database (ISD) of the Nat
 
 List of attributes used in this study is as follows:
 
-| Attributes  | Description |
+| Attribute  | Description |
 | ------------- | ------------- |
 | Arrival Delay  | Content Cell  |
 | Year  | Content Cell  |
