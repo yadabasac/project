@@ -48,6 +48,7 @@ List of attributes used in this study is as follows:
 
 ## 2.3 Exploratory Data Analysis
 
+**Graph 1:**
 ![image](https://github.com/yadabasac/project/assets/129697541/078eceb4-8ce6-4412-b203-06d2447d0eca)
 
 
