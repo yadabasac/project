@@ -9,7 +9,9 @@
 5. Future Work
 6. References
 
-![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising a tentacle.]([https://myoctocat.com/assets/images/base-octocat.svg](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.newsbytesapp.com%2Fnews%2Fbusiness%2Fwhat-compensation-can-you-claim-for-canceled-or-delayed-flight%2Fstory&psig=AOvVaw19QwsFJ8aNrFL8sJGzaG43&ust=1712701175901000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCPjB46TTs4UDFQAAAAAdAAAAABAE)
+![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising a tentacle.](https://i.cdn.newsbytesapp.com/images/l69220240116183655.jpeg?tr=w-720)
+
+https://i.cdn.newsbytesapp.com/images/l69220240116183655.jpeg?tr=w-720
 
 ## 1. Project Overview
 
