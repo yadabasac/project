@@ -77,7 +77,17 @@ We had many options in selecting the best dataset to run our machine learning al
 
 ## 4. Results and Evaluation
 
-The machine learning models were applied to the dataset, including Random Forests, Logistic Regression, Decision Trees, Naïve Bayes, SVM, and Neural Networks. Each model's performance was evaluated based on accuracy, precision, and recall for both training and test data. The computer specifications used for these computations were an 11th Gen Intel(R) Core (TM) i5-1135G7 @ 2.40GHz processor with 8.00 GB Installed RAM.
+The machine learning models were applied to the dataset, including Random Forests, Logistic Regression, Decision Trees, Naïve Bayes, SVM, and Neural Networks. Each model's performance was evaluated based on accuracy, precision, and recall for both training and test data. The computer specifications used for these computations were an 11th Gen Intel(R) Core (TM) i5-1135G7 @ 2.40GHz processor with 8.00 GB Installed RAM. The below summarized the results of each model.
+
+**Table 2:**
+| Model  | Accuracy (K-Fold=5) | Computation Time (seconds) | 
+| ------------- | ------------- |  ------------- |
+| 1. SVM  | 0.9941  | > 10,000 |
+| 2. Random Forests  |  0.9852  | 300 |
+| 3. Neural Networks  | 0.8953  | 250 |
+| 4. Decision Tree  | 0.8867  | 21 |
+| 5. Logistic Regression  | 0.6129 | < 1 |
+| 6. Naive Bayesian  | 0.6115  | < 1 |
 
 Random Forests:
 
@@ -114,6 +124,8 @@ Balancing the dataset using Naïve Random Over-Sampling significantly improved r
 Conclusions:
 
 Random Forests emerged as the best model for predicting flight delays, balancing accuracy and computational efficiency. Future work could explore predicting flight delays in other countries and leveraging cloud computation for larger datasets from the Department of Transportation.
+
+
 
 ## 5. Future Work
 
