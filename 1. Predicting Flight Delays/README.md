@@ -89,44 +89,14 @@ The machine learning models were applied to the dataset, including Random Forest
 | 5. Logistic Regression  | 0.6129 | < 1 |
 | 6. Naive Bayesian  | 0.6115  | < 1 |
 
-Random Forests:
-
-When using the dataset with PCA only, the model showed poor recall (1%) without data balancing. However, with the balanced dataset (PCA first, followed by Naïve Random), significant improvement was observed, with a recall of 97% for the test data.
-
-Decision Trees:
-
-Overfitting was observed with the model trained on the dataset with PCA only, resulting in an accuracy of 70% for the test data. However, when using the balanced dataset, the accuracy improved to 86%.
-
-Logistic Regression:
-
-Both balanced and imbalanced datasets produced similar accuracy (81%) for the test data. However, when using the balanced dataset, precision and recall for the minority class (Arrival Delay = 1) decreased compared to the imbalanced dataset.
-
-Naïve Bayes:
-
-Similar to Logistic Regression, Naïve Bayes showed higher accuracy (80%) with the imbalanced dataset compared to the balanced dataset (62%).
-
-SVM:
-
-The SVM model exhibited high accuracy (99%) with a long training time, showing the model's ability to generalize well to new data. Using the balanced dataset, the model produced an accuracy of over 99%.
-
-Neural Networks:
-
-Various configurations were tested, with the optimal configuration achieving a cross-validated score of 0.89. The model utilized the balanced dataset, showcasing its effectiveness in classifying new data.
-
-Top 3 Performing Models:
-
 SVM, Random Forests, and Neural Networks emerged as the top-performing models based on mean scores from K-Fold Cross Validation. Random Forests stood out due to its relatively high accuracy and shorter computation time compared to SVM.
-
-Methodological Contributions:
-
-Balancing the dataset using Naïve Random Over-Sampling significantly improved results, especially recall values. Primary Component Analysis proved slightly better than feature selection for reducing the number of features. The order of preprocessing steps did not affect the results significantly.
-
-Conclusions:
-
-Random Forests emerged as the best model for predicting flight delays, balancing accuracy and computational efficiency. Future work could explore predicting flight delays in other countries and leveraging cloud computation for larger datasets from the Department of Transportation.
-
-
 
 ## 5. Future Work
 
+Random Forests emerged as the best model for predicting flight delays, balancing accuracy and computational efficiency. Future work could explore predicting flight delays in other countries and leveraging cloud computation for larger datasets from the Department of Transportation.
+
 ## 6. References
+
+1.	Kim, Y. J., Choi, S., Briceno, S., & Mavris, D. (2016). A Deep Learning Approach to Flight Delay Prediction. In 35th Digital Avionics Systems Conference (DASC).
+2.	Chakrabarty, N. (2019). A Data Mining Approach to Flight Arrival Delay Prediction for American Airlines. In 9th Annual Information Technology, Electromechanical Engineering and Microelectronics Conference (IEMECON).
+
