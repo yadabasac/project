@@ -63,9 +63,17 @@ Analysis of flight volumes by day of the week highlights weekdays as busier peri
 
 ## 3. Code Structure
 
-## 2.2 Data Preprocessing
+## 3.1 Merging the Weather Data with the Flight Data
 
-The data preprocessing phase involved several steps to prepare the datasets for machine learning analysis. Weather data, available for individual airports and years, was merged after being downloaded and cleaned, with missing values imputed using the mode. Similarly, the flight dataset was refined by selecting six major airlines and reducing the number of airports to 39 to alleviate processing burdens. After merging the datasets and converting categorical variables to dummy variables through one-hot encoding, the dataset consisted of 53,413 rows, 178 attributes, and one dependent variable, Arrival Delay. Due to class imbalance in the dependent variable, two techniques, Naïve Random Over-Sampling and Synthetic Minority Over-Sampling Technique (SMOTE), were employed, increasing the samples with Arrival Delay equaling 1 from 10,095 to 43,318. Further, Principal Component Analysis (PCA) and feature selection were applied to reduce the number of features, with PCA revealing an elbow point at 50 components. Testing showed that datasets with reduced features (50 features) produced comparable accuracy (81%) to the original dataset (178 features) using Random Forests. Combining K-Fold Cross Validation (n=5) with Random Forests, various dataset combinations were tested, with the 5th dataset (PCA followed by Naïve Random Over-Sampling) exhibiting similar performance to the 7th dataset. Consequently, the 5th dataset was chosen for selecting the best machine learning algorithms. This dataset combination strategy ensures improved model performance while mitigating class imbalance and computational burdens.
+The data preprocessing phase involved several steps to prepare the datasets for machine learning analysis. Weather data, available for individual airports and years, was merged after being downloaded and cleaned, with missing values imputed using the mode. Similarly, the flight dataset was refined by selecting six major airlines and reducing the number of airports to 39 to alleviate processing burdens. After merging the datasets and converting categorical variables to dummy variables through one-hot encoding, the dataset consisted of 53,413 rows, 178 attributes, and one dependent variable, Arrival Delay. 
+
+## 3.2 Dealing with Data Imbalance and Feature Selection
+
+Due to class imbalance in the dependent variable, two techniques, Naïve Random Over-Sampling and Synthetic Minority Over-Sampling Technique (SMOTE), were employed, increasing the samples with Arrival Delay equaling 1 from 10,095 to 43,318. Further, Principal Component Analysis (PCA) and feature selection were applied to reduce the number of features, with PCA revealing an elbow point at 50 components. Testing showed that datasets with reduced features (50 features) produced comparable accuracy (81%) to the original dataset (178 features) using Random Forests. 
+
+## 3.3 Selecting the Best Dataset
+
+We had many options in selecting the best dataset to run our machine learning algorithms. Should we apply Naive Random Over-Sampling or SMOTE? Should we reduce the number of features by PCA or feature selection? Should we deal with data imbalance first and then reduce the number of features? After running all the possible datasets, we found that reducing the number of features by PCA first, then dealing with the data imbalance by Naive Random produced the best results. These results were produced by combining K-Fold Cross Validation (n=5) with Random Forests.
 
 ## 4. Results and Evaluation
 
