@@ -73,3 +73,45 @@ LIMIT 10;
 
 ![image](https://github.com/user-attachments/assets/1c650ce1-3698-4d0c-b50e-b5fe60c1306f)
 
+### 3.3.  Pet Species by Hours Watched
+
+The query calculates the total amount of hours that each pet species is watched. Then, it calculates the percentage of hours each pet species is watched, so the company can examine what types of pets the business relies on.
+
+```
+SELECT   DISTINCT
+      pet.pet_species,
+      hours_by_species.hours_watched,
+      (hours_by_species.hours_watched / total_watched.total_hours) as perc_of_hours_watched
+FROM pet
+      INNER JOIN (
+        SELECT pet_species,
+          SUM((time_to_sec(timediff(schedule_end_time, schedule_start_time))/3600)) as
+          hours_watched
+      FROM pet
+          INNER JOIN `schedule`
+          ON pet.pet_id = `schedule`.pet_id
+          INNER JOIN booking
+          ON `schedule`.schedule_id = booking.schedule_id
+      GROUP BY pet_species
+) hours_by_species
+  INNER JOIN (
+    SELECT SUM((time_to_sec(timediff(schedule_end_time, schedule_start_time))/3600)) as
+      total_hours
+    FROM pet
+      INNER JOIN `schedule`
+      ON pet.pet_id = `schedule`.pet_id
+      INNER JOIN booking
+      ON `schedule`.schedule_id = booking.schedule_id
+) as total_watched
+WHERE hours_by_species.pet_species = pet.pet_species
+ORDER BY perc_of_hours_watched DESC;
+```
+
+![image](https://github.com/user-attachments/assets/d77a1641-1bb4-45fb-9c8d-acbf93fee078)
+
+
+### 3.2.  Owners with Unpaid Bills
+
+
+### 3.2.  Owners with Unpaid Bills
+
