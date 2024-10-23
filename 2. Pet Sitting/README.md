@@ -3,11 +3,8 @@
 ## Contents
 
 1. Project Overview
-2. Data
-3. Code Structure
-4. Results and Evaluation
-5. Future Work
-6. References
+2. Data-Driven Decision Making
+3. Running SQL Queries
 
 ![overnight-pet-sitting 2205201856012](https://github.com/user-attachments/assets/86aadcd1-0255-44f5-997f-6414fd619736)
 
