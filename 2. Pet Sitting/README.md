@@ -49,6 +49,7 @@ GROUP BY sitter.sitter_id
 ORDER BY total_earned desc
 LIMIT 10;
 ```
+![image](https://github.com/user-attachments/assets/5fa8ae10-7ea3-4193-a823-3adefb5b4163)
 
 
 **Graph 1:**
