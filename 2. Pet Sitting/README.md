@@ -30,32 +30,25 @@ Here is our ER model.
 
 ![image](https://github.com/user-attachments/assets/2f908533-5c56-4271-931a-2029adb15fc3)
 
-
-## 3. Populating The Database
-
 The data used in our project were generated from [Mockaroo.](https://www.mockaroo.com/) 
 
-**Table 1:**
-| Attribute  | Description |
-| ------------- | ------------- |
-| 1. Year  | Year of flight departure date  |
-| 2. Month  | Month of flight departure date  |
-| 3. Day of Month  | Day of month of flight departure date  |
-| 4. Day of Week  | Day of week of flight departure date  |
-| 5. Airline  | Airline name  |
-| 6. Origin Airport  | Name of departure airport  |
-| 7. Destination Airport  | Name of arrival airport  |
-| 8. Departure Time Bulk  | Departure time block, hourly intervals  |
-| 9. Arrival Time Bulk  | Arrival time block, hourly intervals  |
-| 10. Windspeed  | Windspeed at both departure and arrival airports  |
-| 11. Cloud height  | Cloud height at both departure and arrival airports  |
-| 12. Visibility  | The horizontal distance at which an object can be seen and identified at both airports  |
-| 13. Temperature  | The temperature of the air at both airports  |
-| 14. Rain  |  The depth of rain measured at both airports |
-| 15. Snow  | The depth of snow measured at both airports  |
+## 3. Running SQL Queries
+### 3.1.  Top 10 Highest Earning Sitters
 
+This SQL query retrieves the sitters who have earned the most money by summing up their transaction amounts in the booking table. It can be used for payroll to determine the highest paid employees.
 
-## 2.3 Exploratory Data Analysis
+```
+SELECT sitter.sitter_id,
+  sitter.sitter_firstname,
+  sitter.sitter_lastname,
+SUM(booking.transaction_amount) as total_earned
+FROM sitter
+INNER JOIN booking
+ON sitter.sitter_id = booking.sitter_id
+GROUP BY sitter.sitter_id
+ORDER BY total_earned desc
+LIMIT 10;
+```
 
 
 **Graph 1:**
