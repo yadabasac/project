@@ -24,9 +24,12 @@ The flow chart diagram below shows the design of our database architecture. From
 
 ![image](https://github.com/user-attachments/assets/0b3e62cb-b035-4659-9f15-dd69680878ab)
 
+As the number of pets requiring pet sitting increases, there is a strong need to integrate their CRM, ERP, and other systems to effectively share data, rather than maintaining several separate sets of data. With a centralized data warehouse, it will be convenient for the company’s analysts to generate reports that can help the management team to make informed decisions. For example, we can find owner cities with the most open schedules for sitters to sign up. We can also show the best rated sitters each year on a dashboard. Moreover, historical data will be stored in our BI system, so trends over time can be presented in reports, such as the top earning sitters or the top watched pets.
 
+Here is our ER model.
 
-Additionally, weather data from the Integrated Surface Database (ISD) of the National Oceanic and Atmospheric Administration (NOAA) was integrated. Weather data can be downloaded [here.](https://www.ncei.noaa.gov/access/search/data-search/global-hourly/)
+![image](https://github.com/user-attachments/assets/2f908533-5c56-4271-931a-2029adb15fc3)
+
 
 ## 2.2 Data Dictionary
 
