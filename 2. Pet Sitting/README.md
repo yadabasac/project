@@ -51,54 +51,25 @@ LIMIT 10;
 ```
 ![image](https://github.com/user-attachments/assets/5fa8ae10-7ea3-4193-a823-3adefb5b4163)
 
+### 3.2.  Owners with Unpaid Bills
+This SQL query pulls the owners who have unpaid bills. It lists the owners in order of who has the largest outstanding amounts due, so the billing department can determine who should be contacted to pay their outstanding bills.
 
-**Graph 1:**
+```
+SELECT o.owner_id,
+  o.owner_firstname,
+  o.owner_lastname,
+  SUM(b.transaction_amount) as amount_due
+FROM `owner` as o
+INNER JOIN booking as b
+ON o.owner_id = b.owner_id
+INNER JOIN `schedule` as s
+ON b.schedule_id = s.schedule_id
+WHERE b.transaction_status = 'UNPAID'
+AND s.schedule_end_time < NOW()
+GROUP BY owner_id
+ORDER BY amount_due DESC
+LIMIT 10;
+```
 
-![image](https://github.com/yadabasac/project/assets/129697541/078eceb4-8ce6-4412-b203-06d2447d0eca)
-
-Graph 1 reveals American Airlines as the leading carrier in terms of flight volume, with Delta Airlines demonstrating the lowest delay percentage, while JetBlue struggles the most with delays.
-
-**Graph 2:**
-![image](https://github.com/yadabasac/project/assets/129697541/a3aa9619-4083-492e-b964-845b05ceb244)
-
-Analysis of flight volumes by day of the week highlights weekdays as busier periods, with Thursdays and Fridays exhibiting the highest delay percentages.
-
-## 3. Code Structure
-
-## 3.1 Merging the Weather Data with the Flight Data
-
-The data preprocessing phase involved several steps to prepare the datasets for machine learning analysis. Weather data, available for individual airports and years, was merged after being downloaded and cleaned, with missing values imputed using the mode. Similarly, the flight dataset was refined by selecting six major airlines and reducing the number of airports to 39 to alleviate processing burdens. After merging the datasets and converting categorical variables to dummy variables through one-hot encoding, the dataset consisted of 53,413 rows, 178 attributes, and one dependent variable, Arrival Delay. 
-
-## 3.2 Dealing with Data Imbalance and Feature Selection
-
-Due to class imbalance in the dependent variable, two techniques, Naïve Random Over-Sampling and Synthetic Minority Over-Sampling Technique (SMOTE), were employed, increasing the samples with Arrival Delay equaling 1 from 10,095 to 43,318. Further, Principal Component Analysis (PCA) and feature selection were applied to reduce the number of features, with PCA revealing an elbow point at 50 components. Testing showed that datasets with reduced features (50 features) produced comparable accuracy (81%) to the original dataset (178 features) using Random Forests. 
-
-## 3.3 Selecting the Best Dataset
-
-We had many options in selecting the best dataset to run our machine learning algorithms. Should we apply Naive Random Over-Sampling or SMOTE? Should we reduce the number of features by PCA or feature selection? Should we deal with data imbalance first and then reduce the number of features? After running all the possible datasets, we found that reducing the number of features by PCA first, then dealing with the data imbalance by Naive Random produced the best results. These results were produced by combining K-Fold Cross Validation (n=5) with Random Forests.
-
-## 4. Results and Evaluation
-
-The machine learning models were applied to the dataset, including Random Forests, Logistic Regression, Decision Trees, Naïve Bayes, SVM, and Neural Networks. Each model's performance was evaluated based on accuracy, precision, and recall for both training and test data. The computer specifications used for these computations were an 11th Gen Intel(R) Core (TM) i5-1135G7 @ 2.40GHz processor with 8.00 GB Installed RAM. The below summarized the results of each model.
-
-**Table 2:**
-| Model  | Accuracy (K-Fold=5) | Computation Time (seconds) | 
-| ------------- | ------------- |  ------------- |
-| 1. SVM  | 0.9941  | > 10,000 |
-| 2. Random Forests  |  0.9852  | 300 |
-| 3. Neural Networks  | 0.8953  | 250 |
-| 4. Decision Tree  | 0.8867  | 21 |
-| 5. Logistic Regression  | 0.6129 | < 1 |
-| 6. Naive Bayesian  | 0.6115  | < 1 |
-
-SVM, Random Forests, and Neural Networks emerged as the top-performing models based on mean scores from K-Fold Cross Validation. Random Forests stood out due to its relatively high accuracy and shorter computation time compared to SVM.
-
-## 5. Future Work
-
-Random Forests emerged as the best model for predicting flight delays, balancing accuracy and computational efficiency. Future work could explore predicting flight delays in other countries and leveraging cloud computation for larger datasets from the Department of Transportation.
-
-## 6. References
-
-1.	Kim, Y. J., Choi, S., Briceno, S., & Mavris, D. (2016). A Deep Learning Approach to Flight Delay Prediction. In 35th Digital Avionics Systems Conference (DASC).
-2.	Chakrabarty, N. (2019). A Data Mining Approach to Flight Arrival Delay Prediction for American Airlines. In 9th Annual Information Technology, Electromechanical Engineering and Microelectronics Conference (IEMECON).
+![image](https://github.com/user-attachments/assets/1c650ce1-3698-4d0c-b50e-b5fe60c1306f)
 
