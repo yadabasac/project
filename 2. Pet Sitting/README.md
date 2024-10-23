@@ -110,8 +110,42 @@ ORDER BY perc_of_hours_watched DESC;
 ![image](https://github.com/user-attachments/assets/d77a1641-1bb4-45fb-9c8d-acbf93fee078)
 
 
-### 3.2.  Owners with Unpaid Bills
+### 3.4.  The Dogs Being Watched the Most
+
+```
+SELECT pet.pet_id,
+    pet.pet_name,
+    SUM((time_to_sec(timediff(schedule_end_time, schedule_start_time))/3600)) as hours_watched
+FROM pet
+    INNER JOIN `schedule`
+    ON pet.pet_id = `schedule`.pet_id
+    INNER JOIN booking
+    ON `schedule`.schedule_id = booking.schedule_id
+WHERE pet_species like '%Dog%'
+GROUP BY pet.pet_id
+ORDER BY hours_watched DESC
+LIMIT 10;
+```
+
+![image](https://github.com/user-attachments/assets/5f2a2497-de60-4f7f-abb7-dc8917e2b974)
 
 
-### 3.2.  Owners with Unpaid Bills
+### 3.5.  Sitters with the Highest Ratings
+
+```
+SELECT sitter.sitter_id,
+    sitter.sitter_firstname,
+    sitter.sitter_lastname,
+    AVG(review.review_rating) as average_rating,
+    COUNT(review.review_id) as number_of_reviews
+FROM sitter
+    INNER JOIN review
+    ON sitter.sitter_id = review.sitter_id
+GROUP BY sitter.sitter_id
+HAVING COUNT(review.review_id) > 1
+ORDER BY average_rating DESC, number_of_reviews DESC
+LIMIT 10;
+```
+
+![image](https://github.com/user-attachments/assets/7c755b26-55e1-4d1c-9f3f-7129f4b26409)
 
