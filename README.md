@@ -6,7 +6,15 @@ This project focuses on predicting flight delays for six major US airlines using
 
 For details, [click here.](https://github.com/yadabasac/project/tree/main/1.%20Predicting%20Flight%20Delays)
 
-## 2. Estimating Optimal Cash Levels
+## 2. Pet Sitting Database
+
+![overnight-pet-sitting 2205201856012](https://github.com/user-attachments/assets/6b7c8d56-9015-4868-892b-0be8fa468b10)
+
+
+For details, [click here.](https://github.com/yadabasac/project/tree/main/1.%20Predicting%20Flight%20Delays)
+
+
+## 3. Estimating Optimal Cash Levels
 
 ![Screenshot of a cash level](https://miro.medium.com/v2/resize:fit:828/format:webp/1*bL3IO7qjRrJEBnNUbXwWTA.png)
 
