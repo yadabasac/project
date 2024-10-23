@@ -9,16 +9,22 @@
 5. Future Work
 6. References
 
-![Screenshot of a information board](https://images.squarespace-cdn.com/content/v1/57ec342ae3df280fee7ee269/1551985615257-NMHPDX5QLNUBW5E4YKYZ/Pet_Sitter.jpg)
+![overnight-pet-sitting 2205201856012](https://github.com/user-attachments/assets/86aadcd1-0255-44f5-997f-6414fd619736)
+
 
 ## 1. Project Overview
 
-This project focuses on predicting flight delays for six major US airlines using machine learning models. Delayed aircraft are estimated to have cost the airlines several billion dollars in additional expense. Delays also drive the need for extra gates and ground personnel and impose costs on airline customers (including shippers) in the form of lost productivity, wages and goodwill. Results indicate the models' ability to accurately forecast delays, with improvements noted through data balancing and feature reduction. Such insights are pivotal for crafting more effective air traffic management strategies, curbing delays, and their economic ramifications. 
+In today’s fast-paced world, pet ownership is on the rise, with more individuals and families welcoming pets into their homes but struggling to have quality time with their pets. Thus, there comes a growing need for reliable and efficient pet care services. Pet Sitters recognizes this market opportunity and aims to capitalize on it by building a pet sitting database to pair professional pet sitters with households requiring pet sitting services. This report outlines the rationale behind this project and highlights the benefits it will bring to the company.
 
-## 2. Data
-## 2.1 Data Source
+A pet sitting database will enable us to offer a more personalized and tailored experience to our customers. By maintaining comprehensive profiles of each pet and their respective owners, we can capture important details such as dietary preferences, and behavioral traits. This information will enable our pet sitters to provide customized care that meets the unique needs of every pet, fostering stronger relationships with both pets and their owners. Additionally, the database will enable us to track and analyze customer feedback, allowing us to continuously improve the quality of our services and revise our training programs of professional pet sitters.
 
-The dataset utilized for this project comprises flight data sourced from the U.S. Department of Transportation. Due to computational constraints, a smaller sample dataset (containing 53,413 rows) focusing on flight data from six major airlines: Southwest, Delta, American Airlines, Republic, JetBlue, and Alaska, spanning January 2018 to December 2020. Flight data from Department of Transportation can be downloaded [here.](https://www.transtats.bts.gov/DL_SelectFields.aspx?gnoyr_VQ=FGJ&QO_fu146_anzr=b0-gvzr/)
+## 2. Data-Driven Decision Making
+
+The flow chart diagram below shows the design of our database architecture. From our discussions with Pet Sitters, we understand that the company has its on-premises enterprise resource planning (ERP) systems that help it manage its day-to-day business activities, such as accounting, finance, procurement, and human resources. The human resources systems help the company manage its employees, pet sitters and the review related to each pet sitter. In addition, the company is also using customer relationship management (CRM) systems to support its front-office business functions, such as marketing, sales, advertising, and customer service related to pet owners.
+
+![image](https://github.com/user-attachments/assets/0b3e62cb-b035-4659-9f15-dd69680878ab)
+
+
 
 Additionally, weather data from the Integrated Surface Database (ISD) of the National Oceanic and Atmospheric Administration (NOAA) was integrated. Weather data can be downloaded [here.](https://www.ncei.noaa.gov/access/search/data-search/global-hourly/)
 
