@@ -11,7 +11,7 @@ For details, [click here.](https://github.com/yadabasac/project/tree/main/1.%20P
 ![overnight-pet-sitting 2205201856012](https://github.com/user-attachments/assets/6b7c8d56-9015-4868-892b-0be8fa468b10)
 
 
-For details, [click here.](https://github.com/yadabasac/project/tree/main/1.%20Predicting%20Flight%20Delays)
+For details, [click here.]([https://github.com/yadabasac/project/tree/main/1.%20Predicting%20Flight%20Delays](https://github.com/yadabasac/project/tree/main/2.%20Pet%20Sitting))
 
 
 ## 3. Estimating Optimal Cash Levels
