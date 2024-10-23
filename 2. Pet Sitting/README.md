@@ -112,6 +112,8 @@ ORDER BY perc_of_hours_watched DESC;
 
 ### 3.4.  The Dogs Being Watched the Most
 
+The SQL query sums up the number of hours each pet is watched and returns the pets in order of highest number of hours. It allows the company to see the dogs that are continuing to use the service or their top clients.
+
 ```
 SELECT pet.pet_id,
     pet.pet_name,
@@ -131,6 +133,8 @@ LIMIT 10;
 
 
 ### 3.5.  Sitters with the Highest Ratings
+
+The query uses the average and count function to return the sitters who have the highest average rating, and it only includes sitters who have more than one rating. This query could be used by customers to find the best sitters for their pets or for the company to find the top performing employees.
 
 ```
 SELECT sitter.sitter_id,
