@@ -31,10 +31,9 @@ Here is our ER model.
 ![image](https://github.com/user-attachments/assets/2f908533-5c56-4271-931a-2029adb15fc3)
 
 
-## 2.2 Data Dictionary
+## 3. Populating The Database
 
-The target variable is Arrival Delay, which is set to 1 if a flight is delayed 15 minutes or more or 0 otherwise.
-List of attributes used in this study is as follows:
+The data used in our project were generated from [Mockaroo.](https://www.mockaroo.com/) 
 
 **Table 1:**
 | Attribute  | Description |
