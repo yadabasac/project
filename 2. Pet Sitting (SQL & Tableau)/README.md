@@ -1,4 +1,4 @@
-# Implementation of Pet Sitting Database
+# Implementation of Pet Sitting Database (SQL & Tableau)
 
 ## Contents
 
