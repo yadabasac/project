@@ -1,4 +1,4 @@
-# Estimating Optimal Cash Levels (Still in progess)
+# Estimating Optimal Cash Levels (SAS)
 
 ![Screenshot of a cash level](https://miro.medium.com/v2/resize:fit:828/format:webp/1*bL3IO7qjRrJEBnNUbXwWTA.png)
 
