@@ -1,4 +1,4 @@
-## 1. Predicting Flight Delays in the United States (Python)
+## 1. Predicting Flight Delays in the United States (Python & R)
 
 ![Screenshot of a information board](https://i.cdn.newsbytesapp.com/images/l69220240116183655.jpeg?tr=w-720)
 
