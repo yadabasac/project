@@ -1,4 +1,4 @@
-# Estimating Optimal Cash Levels (SAS
+# Estimating Optimal Cash Levels (SAS)
 
 ## Contents
 
