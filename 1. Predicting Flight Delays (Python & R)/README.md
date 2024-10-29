@@ -9,7 +9,7 @@
 5. Future Work
 6. References
 
-![Screenshot of a information board](https://i.cdn.newsbytesapp.com/images/l69220240116183655.jpeg?tr=w-720)
+![image](https://github.com/user-attachments/assets/a326d604-5f5e-42bb-bf54-c00bd83d8201)
 
 ## 1. Project Overview
 
