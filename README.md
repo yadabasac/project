@@ -14,7 +14,7 @@ In today’s fast-paced world, pet ownership is on the rise, with more individua
 
 A pet sitting database will enable us to offer a more personalized and tailored experience to our customers. By maintaining comprehensive profiles of each pet and their respective owners, we can capture important details such as dietary preferences, and behavioral traits. This information will enable our pet sitters to provide customized care that meets the unique needs of every pet, fostering stronger relationships with both pets and their owners. Additionally, the database will enable us to track and analyze customer feedback, allowing us to continuously improve the quality of our services and revise our training programs of professional pet sitters.
 
-For details, [click here.](https://github.com/yadabasac/project/tree/main/2.%20Pet%20Sitting)
+For details, [click here.](https://github.com/yadabasac/project/blob/main/2.%20Pet%20Sitting%20(SQL%20%26%20Tableau)/README.md)
 
 
 ## 3. Estimating Optimal Cash Levels (SAS)
