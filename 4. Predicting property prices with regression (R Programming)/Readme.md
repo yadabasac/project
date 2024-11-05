@@ -26,10 +26,8 @@ Below is the exploratory data analysis of the attributes we will use to predict 
 | Area of lot (sqft)	 | 11,959.63	 | 9,593.12
 | Area of frontage (sqft)	 | 902.63	 | 255.55
 | Traffic counts (vehicles per day)	 | 20,221.15	 | 8,368.87
-| House type	 | NA	 | NA
 | One and a half Stories (%)	 | 0.09	 | 0.28
 | Two Stories (%)	 | 0.15	 | 0.36
-| Interior condition	 | NA	 | NA
 | Average interior condition (%)	 | 0.45	 | 0.5
 | Good interior condition (%)	 | 0.34	 | 0.47
 | Excellent interior condition (%)	 | 0.12	 | 0.32
@@ -242,6 +240,44 @@ plot(predicted.saleprice2,standardized.residual2)
 ```
 
 ## 4. Results and Evaluation
+### 4. Results and Evaluation of Model 1
+
+**Table 1:**
+| Attribute  | Mean | Standar Deviation |
+| ------------- | ------------- |------------- |
+| Area of lot (sqft)	 | 11,959.63	 | 9,593.12
+| Area of frontage (sqft)	 | 902.63	 | 255.55
+| Traffic counts (vehicles per day)	 | 20,221.15	 | 8,368.87
+| House type	 | NA	 | NA
+| One and a half Stories (%)	 | 0.09	 | 0.28
+| Two Stories (%)	 | 0.15	 | 0.36
+| Interior condition	 | NA	 | NA
+| Average interior condition (%)	 | 0.45	 | 0.5
+| Good interior condition (%)	 | 0.34	 | 0.47
+| Excellent interior condition (%)	 | 0.12	 | 0.32
+| Four lane road	 | 0.33	 | 0.47
+
+**Table 2:**
+| Description  | Model I Coeff.| Model I Std. error | Model II Coeff.| Model II Std. error | 
+| ------------- | ------------- |------------- |------------- |------------- |
+| Intercept	 | 86,024.87***	 | 11,194.30	 | 97,122.36***	 | 12,959.83 | 
+| One and a half Storey	 | 619.62	 | 8,588.25	 | -1,369.40	 | 8,487.06 | 
+| Two Storey	 | 6,556.90	 | 6,979.82	 | 6,227.66	 | 6,827.73 | 
+| Area of lot	 | 1.06***	 | 0.24	 | 0.94***	 | 0.24 | 
+| Area of frontage	 | 26.48**	 | 10.03	 | 28.16**	 | 9.83 | 
+| Average interior condition	 | 10,102.82	 | 7,980.86	 | 9,348.79	 | 7,913.32 | 
+| Good interior condition	 | 20,615.00*	 | 8,463.22	 | 20,556.86*	 | 8,406.02 | 
+| Excellent interior condition	 | 26,144.93*	 | 9,973.72	 | 26,155.99**	 | 9,895.76 | 
+| Four lane road	 | -11,394.39*	 | 5,191.42	 | NA	 | NA | 
+| Traffic counts	 | NA	 | NA	 | -0.71*	 | 0.29 | 
+
+**Table 2:**
+| Description  | Model I | Model I | 
+| ------------- | ------------- |------------- | 
+| Sample Size	 | 104	 | 104 |
+| F statistics | 9.04*** | 9.32*** |
+| Adjusted R2	 | 0.38	 | 0.39 |
+| R2	 | 0.43	 | 0.44 |
 
 The machine learning models were applied to the dataset, including Random Forests, Logistic Regression, Decision Trees, Naïve Bayes, SVM, and Neural Networks. Each model's performance was evaluated based on accuracy, precision, and recall for both training and test data. The computer specifications used for these computations were an 11th Gen Intel(R) Core (TM) i5-1135G7 @ 2.40GHz processor with 8.00 GB Installed RAM. The below summarized the results of each model.
 
