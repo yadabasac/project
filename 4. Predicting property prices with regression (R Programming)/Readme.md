@@ -41,7 +41,7 @@ Generally, the price of a home is based on different factors and owners’ decis
 We built two models. Model I estimates house prices based on whether they are located on a typical residential road or four-lane road and other variables. Model II uses traffic counts instead of a dummy variable showing whether a house located on a typical residential road or four-lane road. Variables in our models are chosen because we think that they are important in determining our house prices and they do not show any multicollinearity problems.
 
 ### 3.1. Regression Results
-**Table 2:**
+**Table 2: Regression Results**
 | Description  | Model I Coeff.| Model I Std. error | Model II Coeff.| Model II Std. error | 
 | ------------- | ------------- |------------- |------------- |------------- |
 | Intercept	 | 86,024.87***	 | 11,194.30	 | 97,122.36***	 | 12,959.83 | 
@@ -55,7 +55,7 @@ We built two models. Model I estimates house prices based on whether they are lo
 | Four lane road	 | -11,394.39*	 | 5,191.42	 | NA	 | NA | 
 | Traffic counts	 | NA	 | NA	 | -0.71*	 | 0.29 | 
 
-**Table 3:**
+**Table 3: Model Fitness**
 | Description  | Model I | Model I | 
 | ------------- | ------------- |------------- | 
 | Sample Size	 | 104	 | 104 |
