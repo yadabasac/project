@@ -35,19 +35,150 @@ Below is the exploratory data analysis of the attributes we will use to predict 
 | Excellent interior condition (%)	 | 0.12	 | 0.32
 | Four lane road	 | 0.33	 | 0.47
 
+To come up with reasonable compensations for residential properties, we decided to use the multiple regression model. It gives the most accurate numbers by using a formula to calculate prices while the traditional methods allow different evaluators to say different prices.
+
+Generally, the price of a home is based on different factors and owners’ decisions. For example, house size, lot size, home features, interior or exterior condition, location, etc. 
+
 ## 3. Code Structure
+```
+#Import Data
+#-- Set working directory: Session --> Set Working Directory --> To Source File Location
+dat <- read.csv("Springbank Drive Revised2.csv", header=TRUE)  
 
-## 3.1 Merging the Weather Data with the Flight Data
+#Print column names on the screen
+colnames(dat) 
+##  [1] "Property.."                         "Address"                           
+##  [3] "Sales.Date"                         "HSETYPE"                           
+##  [5] "One.and.a.Half.Storey"              "Two.Storey"                        
+##  [7] "AGEYR"                              "LOTAREA"                           
+##  [9] "LFA"                                "Discurb"                           
+## [11] "EXTAMEN"                            "Minor.Exterior.Amenities"          
+## [13] "Two.or.Three.Extra.Amenities"       "More.than.Three.Exterior.Amenities"
+## [15] "EXTFINFACTOR"                       "Only.Brick"                        
+## [17] "GAR"                                "Carport"                           
+## [19] "One.Car.Garage"                     "Two.Car.Garage"                    
+## [21] "STSCAPE"                            "Average.View"                      
+## [23] "Good.View"                          "CENAIR"                            
+## [25] "POOL"                               "INTCOND"                           
+## [27] "Average.Interior.Condition"         "Good.Interior.Condition"           
+## [29] "Excellent.Interior.Condition"       "BSMTFINAREA"                       
+## [31] "BI.AMEN.APPL"                       "LANESRD"                           
+## [33] "TRAFCOUNT"                          "PRICE"
+#Extract variables to be used in the analyses
+PRICE <- dat[,"PRICE"]
+One.and.a.Half.Storey <- dat[,"One.and.a.Half.Storey"]
+Two.Storey <- dat[,"Two.Storey"]
+AGEYR <- dat[,"AGEYR"]
+LOTAREA <- dat[,"LOTAREA"]
+LFA <- dat[,"LFA"]
+Discurb <- dat[,"Discurb"]
+Only.Brick <- dat[,"Only.Brick"]
+Carport <- dat[,"Carport"]
+One.Car.Garage <- dat[,"One.Car.Garage"]
+Two.Car.Garage <- dat[,"Two.Car.Garage"]
+CENAIR <- dat[,"CENAIR"]
+Average.Interior.Condition <- dat[,"Average.Interior.Condition"]
+Good.Interior.Condition <- dat[,"Good.Interior.Condition"]
+Excellent.Interior.Condition <- dat[,"Excellent.Interior.Condition"]
+LANESRD <- dat[,"LANESRD"]
+TRAFCOUNT <- dat[,"TRAFCOUNT"]
 
-The data preprocessing phase involved several steps to prepare the datasets for machine learning analysis. Weather data, available for individual airports and years, was merged after being downloaded and cleaned, with missing values imputed using the mode. Similarly, the flight dataset was refined by selecting six major airlines and reducing the number of airports to 39 to alleviate processing burdens. After merging the datasets and converting categorical variables to dummy variables through one-hot encoding, the dataset consisted of 53,413 rows, 178 attributes, and one dependent variable, Arrival Delay. 
+#Generate correlation matrix
+cor(cbind(PRICE, One.and.a.Half.Storey, Two.Storey, LOTAREA, LFA, Average.Interior.Condition, Good.Interior.Condition, Excellent.Interior.Condition, LANESRD, TRAFCOUNT)) #cbind creates a matrix
+##                                    PRICE One.and.a.Half.Storey  Two.Storey
+## PRICE                         1.00000000           0.040971000 -0.06795999
+## One.and.a.Half.Storey         0.04097100           1.000000000 -0.13124359
+## Two.Storey                   -0.06795999          -0.131243592  1.00000000
+## LOTAREA                       0.46486165          -0.052554087 -0.10011186
+## LFA                           0.40025782           0.307324414  0.13879021
+## Average.Interior.Condition   -0.21213447           0.064091778  0.04119100
+## Good.Interior.Condition       0.24754611          -0.146838801 -0.13449056
+## Excellent.Interior.Condition  0.17764607           0.102927733 -0.15399810
+## LANESRD                      -0.34800933           0.004206101  0.32776415
+## TRAFCOUNT                    -0.39711908          -0.059501520  0.31506234
+##                                  LOTAREA         LFA Average.Interior.Condition
+## PRICE                         0.46486165  0.40025782                -0.21213447
+## One.and.a.Half.Storey        -0.05255409  0.30732441                 0.06409178
+## Two.Storey                   -0.10011186  0.13879021                 0.04119100
+## LOTAREA                       1.00000000  0.21696083                 0.06249103
+## LFA                           0.21696083  1.00000000                -0.16718949
+## Average.Interior.Condition    0.06249103 -0.16718949                 1.00000000
+## Good.Interior.Condition       0.02431326  0.19742362                -0.64672698
+## Excellent.Interior.Condition  0.02855017 -0.03540225                -0.32795043
+## LANESRD                      -0.13325383 -0.17802569                 0.27325886
+## TRAFCOUNT                    -0.28888552 -0.15172499                 0.15566992
+##                              Good.Interior.Condition
+## PRICE                                     0.24754611
+## One.and.a.Half.Storey                    -0.14683880
+## Two.Storey                               -0.13449056
+## LOTAREA                                   0.02431326
+## LFA                                       0.19742362
+## Average.Interior.Condition               -0.64672698
+## Good.Interior.Condition                   1.00000000
+## Excellent.Interior.Condition             -0.25722086
+## LANESRD                                  -0.23608554
+## TRAFCOUNT                                -0.15084884
+##                              Excellent.Interior.Condition      LANESRD
+## PRICE                                          0.17764607 -0.348009325
+## One.and.a.Half.Storey                          0.10292773  0.004206101
+## Two.Storey                                    -0.15399810  0.327764146
+## LOTAREA                                        0.02855017 -0.133253829
+## LFA                                           -0.03540225 -0.178025693
+## Average.Interior.Condition                    -0.32795043  0.273258862
+## Good.Interior.Condition                       -0.25722086 -0.236085539
+## Excellent.Interior.Condition                   1.00000000 -0.187542875
+## LANESRD                                       -0.18754287  1.000000000
+## TRAFCOUNT                                     -0.16136359  0.735844388
+##                                TRAFCOUNT
+## PRICE                        -0.39711908
+## One.and.a.Half.Storey        -0.05950152
+## Two.Storey                    0.31506234
+## LOTAREA                      -0.28888552
+## LFA                          -0.15172499
+## Average.Interior.Condition    0.15566992
+## Good.Interior.Condition      -0.15084884
+## Excellent.Interior.Condition -0.16136359
+## LANESRD                       0.73584439
+## TRAFCOUNT                     1.00000000
+#Regress price on lanesrd and others
+mod.1 <- lm(PRICE ~ One.and.a.Half.Storey + Two.Storey + LOTAREA + LFA + Average.Interior.Condition + Good.Interior.Condition + Excellent.Interior.Condition + LANESRD)
+#Present Parameter Estimates, Coefficient of Determination, etc.
+summary(mod.1)
+## 
+## Call:
+## lm(formula = PRICE ~ One.and.a.Half.Storey + Two.Storey + LOTAREA + 
+##     LFA + Average.Interior.Condition + Good.Interior.Condition + 
+##     Excellent.Interior.Condition + LANESRD)
+## 
+## Residuals:
+##    Min     1Q Median     3Q    Max 
+## -49134 -12851  -2744   8373 105800 
+## 
 
-## 3.2 Dealing with Data Imbalance and Feature Selection
+## Coefficients:
+##                                Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)                   8.602e+04  1.119e+04   7.685 1.38e-11 ***
+## One.and.a.Half.Storey         6.196e+02  8.588e+03   0.072   0.9426    
+## Two.Storey                    6.557e+03  6.980e+03   0.939   0.3499    
+## LOTAREA                       1.060e+00  2.382e-01   4.448 2.35e-05 ***
+## LFA                           2.649e+01  1.003e+01   2.640   0.0097 ** 
+## Average.Interior.Condition    1.010e+04  7.981e+03   1.266   0.2087    
+## Good.Interior.Condition       2.062e+04  8.463e+03   2.436   0.0167 *  
+## Excellent.Interior.Condition  2.614e+04  9.974e+03   2.621   0.0102 *  
+## LANESRD                      -1.139e+04  5.191e+03  -2.195   0.0306 *  
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 21770 on 95 degrees of freedom
+## Multiple R-squared:  0.4323, Adjusted R-squared:  0.3844 
+## F-statistic: 9.041 on 8 and 95 DF,  p-value: 3.722e-09
+#Extract standardized residuals and predicted values
+standardized.residual1 = rstandard(mod.1)
+predicted.saleprice1 <- predict(mod.1)
 
-Due to class imbalance in the dependent variable, two techniques, Naïve Random Over-Sampling and Synthetic Minority Over-Sampling Technique (SMOTE), were employed, increasing the samples with Arrival Delay equaling 1 from 10,095 to 43,318. Further, Principal Component Analysis (PCA) and feature selection were applied to reduce the number of features, with PCA revealing an elbow point at 50 components. Testing showed that datasets with reduced features (50 features) produced comparable accuracy (81%) to the original dataset (178 features) using Random Forests. 
+plot(predicted.saleprice1,standardized.residual1)
 
-## 3.3 Selecting the Best Dataset
-
-We had many options in selecting the best dataset to run our machine learning algorithms. Should we apply Naive Random Over-Sampling or SMOTE? Should we reduce the number of features by PCA or feature selection? Should we deal with data imbalance first and then reduce the number of features? After running all the possible datasets, we found that reducing the number of features by PCA first, then dealing with the data imbalance by Naive Random produced the best results. These results were produced by combining K-Fold Cross Validation (n=5) with Random Forests.
+```
 
 ## 4. Results and Evaluation
 
