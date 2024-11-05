@@ -12,7 +12,7 @@
 
 ## 1. Project Overview
 
-The city of London Ontario and federal government had a plan to extend the Springbank Drive Road from 2 lanes to 4 lanes. However, doing that would affect some of the properties in that area since they would be required to not only give up some of their spaces to the city, but also, they would have to experience the increase in traffic. Therefore, the city of London Ontario asked for help to determine those property prices in 2003, as they needed to give compensation to those people who would be affected by the construction. If the City of London was challenged in court over the compensation claims, we would need to determine the loss of market value for each homeowner and defend our strategy.
+A city had a plan to extend a local road from 2 lanes to 4 lanes. However, doing that would affect some of the properties in that area since they would be required to not only give up some of their spaces to the city, but also, they would have to experience the increase in traffic. Therefore, the city asked for help to determine those property prices, as they needed to give compensation to those people who would be affected by the construction. If the city was challenged in court over the compensation claims, we would need to determine the loss of market value for each homeowner and defend our strategy.
 
 
 ## 2. Data
