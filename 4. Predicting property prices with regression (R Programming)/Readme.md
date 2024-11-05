@@ -16,33 +16,25 @@ A city had a plan to extend a local road from 2 lanes to 4 lanes. However, doing
 
 
 ## 2. Data
-## 2.1 Data Source
 
 The dataset in this project can be downloaded from  [here.](https://github.com/yadabasac/project/blob/main/4.%20Predicting%20property%20prices%20with%20regression%20(R%20Programming)/1.%20Dataset/Property%20features%20dataset.csv)
 
-## 2.2 Data Dictionary
-
-The target variable is Arrival Delay, which is set to 1 if a flight is delayed 15 minutes or more or 0 otherwise.
-List of attributes used in this study is as follows:
-
 **Table 1:**
-| Attribute  | Description |
-| ------------- | ------------- |
-| 1. Year  | Year of flight departure date  |
-| 2. Month  | Month of flight departure date  |
-| 3. Day of Month  | Day of month of flight departure date  |
-| 4. Day of Week  | Day of week of flight departure date  |
-| 5. Airline  | Airline name  |
-| 6. Origin Airport  | Name of departure airport  |
-| 7. Destination Airport  | Name of arrival airport  |
-| 8. Departure Time Bulk  | Departure time block, hourly intervals  |
-| 9. Arrival Time Bulk  | Arrival time block, hourly intervals  |
-| 10. Windspeed  | Windspeed at both departure and arrival airports  |
-| 11. Cloud height  | Cloud height at both departure and arrival airports  |
-| 12. Visibility  | The horizontal distance at which an object can be seen and identified at both airports  |
-| 13. Temperature  | The temperature of the air at both airports  |
-| 14. Rain  |  The depth of rain measured at both airports |
-| 15. Snow  | The depth of snow measured at both airports  |
+| Attribute  | Mean | Standar Deviation |
+| ------------- | ------------- |------------- |
+
+| Area of lot (sqft)	 | 11,959.63	 | 9,593.12
+| Area of frontage (sqft)	 | 902.63	 | 255.55
+| Traffic counts (vehicles per day)	 | 20,221.15	 | 8,368.87
+| House type	 | NA	 | NA
+| One and a half Stories (%)	 | 0.09	 | 0.28
+| Two Stories (%)	 | 0.15	 | 0.36
+| Interior condition	 | NA	 | NA
+| Average interior condition (%)	 | 0.45	 | 0.5
+| Good interior condition (%)	 | 0.34	 | 0.47
+| Excellent interior condition (%)	 | 0.12	 | 0.32
+| Four lane road	 | 0.33	 | 0.47
+
 
 
 ## 2.3 Exploratory Data Analysis
