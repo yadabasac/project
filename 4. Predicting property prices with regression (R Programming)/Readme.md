@@ -8,8 +8,7 @@
 4. Results and Evaluation
 5. References
 
-![AdobeStock_709036421_Preview](https://github.com/user-attachments/assets/15ed3767-152d-44d9-a815-c8265ea7d355)
-
+![1](https://github.com/user-attachments/assets/c5881dff-f919-402d-a7b2-827372436b8b)
 
 ## 1. Project Overview
 
