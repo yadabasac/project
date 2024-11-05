@@ -47,17 +47,7 @@ List of attributes used in this study is as follows:
 
 ## 2.3 Exploratory Data Analysis
 
-
-**Graph 1:**
-
-![image](https://github.com/yadabasac/project/assets/129697541/078eceb4-8ce6-4412-b203-06d2447d0eca)
-
-Graph 1 reveals American Airlines as the leading carrier in terms of flight volume, with Delta Airlines demonstrating the lowest delay percentage, while JetBlue struggles the most with delays.
-
-**Graph 2:**
-![image](https://github.com/yadabasac/project/assets/129697541/a3aa9619-4083-492e-b964-845b05ceb244)
-
-Analysis of flight volumes by day of the week highlights weekdays as busier periods, with Thursdays and Fridays exhibiting the highest delay percentages.
+![image](https://github.com/user-attachments/assets/ef5004da-67c3-4011-a7f3-4ab11eab81ca)
 
 ## 3. Code Structure
 
