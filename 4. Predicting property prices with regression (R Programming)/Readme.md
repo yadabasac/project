@@ -63,10 +63,12 @@ We built two models. Model I estimates house prices based on whether they are lo
 | Adjusted R2	 | 0.38	 | 0.39 |
 | R2	 | 0.43	 | 0.44 |
 
+```
 Notes:
 *   : 	p < 0.05
 **  : 	p < 0.01
 *** : 	p < 0.001
+```
 
 ### 3.2. Explaining Results
 
