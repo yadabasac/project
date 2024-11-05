@@ -22,7 +22,6 @@ The dataset in this project can be downloaded from  [here.](https://github.com/y
 **Table 1:**
 | Attribute  | Mean | Standar Deviation |
 | ------------- | ------------- |------------- |
-
 | Area of lot (sqft)	 | 11,959.63	 | 9,593.12
 | Area of frontage (sqft)	 | 902.63	 | 255.55
 | Traffic counts (vehicles per day)	 | 20,221.15	 | 8,368.87
