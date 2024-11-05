@@ -42,10 +42,12 @@ Generally, the price of a home is based on different factors and owners’ decis
 ## 3. Code Structure
 ```
 #Import Data
+
 #-- Set working directory: Session --> Set Working Directory --> To Source File Location
 dat <- read.csv("Springbank Drive Revised2.csv", header=TRUE)  
 
 #Print column names on the screen
+
 colnames(dat) 
 ##  [1] "Property.."                         "Address"                           
 ##  [3] "Sales.Date"                         "HSETYPE"                           
@@ -64,7 +66,9 @@ colnames(dat)
 ## [29] "Excellent.Interior.Condition"       "BSMTFINAREA"                       
 ## [31] "BI.AMEN.APPL"                       "LANESRD"                           
 ## [33] "TRAFCOUNT"                          "PRICE"
+
 #Extract variables to be used in the analyses
+
 PRICE <- dat[,"PRICE"]
 One.and.a.Half.Storey <- dat[,"One.and.a.Half.Storey"]
 Two.Storey <- dat[,"Two.Storey"]
@@ -84,6 +88,7 @@ LANESRD <- dat[,"LANESRD"]
 TRAFCOUNT <- dat[,"TRAFCOUNT"]
 
 #Generate correlation matrix
+
 cor(cbind(PRICE, One.and.a.Half.Storey, Two.Storey, LOTAREA, LFA, Average.Interior.Condition, Good.Interior.Condition, Excellent.Interior.Condition, LANESRD, TRAFCOUNT)) #cbind creates a matrix
 ##                                    PRICE One.and.a.Half.Storey  Two.Storey
 ## PRICE                         1.00000000           0.040971000 -0.06795999
@@ -96,6 +101,7 @@ cor(cbind(PRICE, One.and.a.Half.Storey, Two.Storey, LOTAREA, LFA, Average.Interi
 ## Excellent.Interior.Condition  0.17764607           0.102927733 -0.15399810
 ## LANESRD                      -0.34800933           0.004206101  0.32776415
 ## TRAFCOUNT                    -0.39711908          -0.059501520  0.31506234
+
 ##                                  LOTAREA         LFA Average.Interior.Condition
 ## PRICE                         0.46486165  0.40025782                -0.21213447
 ## One.and.a.Half.Storey        -0.05255409  0.30732441                 0.06409178
@@ -107,6 +113,7 @@ cor(cbind(PRICE, One.and.a.Half.Storey, Two.Storey, LOTAREA, LFA, Average.Interi
 ## Excellent.Interior.Condition  0.02855017 -0.03540225                -0.32795043
 ## LANESRD                      -0.13325383 -0.17802569                 0.27325886
 ## TRAFCOUNT                    -0.28888552 -0.15172499                 0.15566992
+
 ##                              Good.Interior.Condition
 ## PRICE                                     0.24754611
 ## One.and.a.Half.Storey                    -0.14683880
@@ -118,6 +125,7 @@ cor(cbind(PRICE, One.and.a.Half.Storey, Two.Storey, LOTAREA, LFA, Average.Interi
 ## Excellent.Interior.Condition             -0.25722086
 ## LANESRD                                  -0.23608554
 ## TRAFCOUNT                                -0.15084884
+
 ##                              Excellent.Interior.Condition      LANESRD
 ## PRICE                                          0.17764607 -0.348009325
 ## One.and.a.Half.Storey                          0.10292773  0.004206101
@@ -129,6 +137,7 @@ cor(cbind(PRICE, One.and.a.Half.Storey, Two.Storey, LOTAREA, LFA, Average.Interi
 ## Excellent.Interior.Condition                   1.00000000 -0.187542875
 ## LANESRD                                       -0.18754287  1.000000000
 ## TRAFCOUNT                                     -0.16136359  0.735844388
+
 ##                                TRAFCOUNT
 ## PRICE                        -0.39711908
 ## One.and.a.Half.Storey        -0.05950152
@@ -140,6 +149,7 @@ cor(cbind(PRICE, One.and.a.Half.Storey, Two.Storey, LOTAREA, LFA, Average.Interi
 ## Excellent.Interior.Condition -0.16136359
 ## LANESRD                       0.73584439
 ## TRAFCOUNT                     1.00000000
+
 #Regress price on lanesrd and others
 mod.1 <- lm(PRICE ~ One.and.a.Half.Storey + Two.Storey + LOTAREA + LFA + Average.Interior.Condition + Good.Interior.Condition + Excellent.Interior.Condition + LANESRD)
 #Present Parameter Estimates, Coefficient of Determination, etc.
