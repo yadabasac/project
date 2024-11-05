@@ -4,10 +4,9 @@
 
 1. Project Overview
 2. Data
-3. Code Structure
-4. Results and Evaluation
-5. References
-
+3. Results and Evaluation
+4. Code Structure
+   
 ![1](https://github.com/user-attachments/assets/c5881dff-f919-402d-a7b2-827372436b8b)
 
 ## 1. Project Overview
@@ -37,21 +36,72 @@ To come up with reasonable compensations for residential properties, we decided 
 
 Generally, the price of a home is based on different factors and owners’ decisions. For example, house size, lot size, home features, interior or exterior condition, location, etc. 
 
-## 3. Code Structure
+## 3. Results and Evaluation
 
-### 3.1 Importing the dataset
+We built two models. Model I estimates house prices based on whether they are located on a typical residential road or four-lane road and other variables. Model II uses traffic counts instead of a dummy variable showing whether a house located on a typical residential road or four-lane road. Variables in our models are chosen because we think that they are important in determining our house prices and they do not show any multicollinearity problems.
+
+**Table 2:**
+| Description  | Model I Coeff.| Model I Std. error | Model II Coeff.| Model II Std. error | 
+| ------------- | ------------- |------------- |------------- |------------- |
+| Intercept	 | 86,024.87***	 | 11,194.30	 | 97,122.36***	 | 12,959.83 | 
+| One and a half Storey	 | 619.62	 | 8,588.25	 | -1,369.40	 | 8,487.06 | 
+| Two Storey	 | 6,556.90	 | 6,979.82	 | 6,227.66	 | 6,827.73 | 
+| Area of lot	 | 1.06***	 | 0.24	 | 0.94***	 | 0.24 | 
+| Area of frontage	 | 26.48**	 | 10.03	 | 28.16**	 | 9.83 | 
+| Average interior condition	 | 10,102.82	 | 7,980.86	 | 9,348.79	 | 7,913.32 | 
+| Good interior condition	 | 20,615.00*	 | 8,463.22	 | 20,556.86*	 | 8,406.02 | 
+| Excellent interior condition	 | 26,144.93*	 | 9,973.72	 | 26,155.99**	 | 9,895.76 | 
+| Four lane road	 | -11,394.39*	 | 5,191.42	 | NA	 | NA | 
+| Traffic counts	 | NA	 | NA	 | -0.71*	 | 0.29 | 
+
+**Table 3:**
+| Description  | Model I | Model I | 
+| ------------- | ------------- |------------- | 
+| Sample Size	 | 104	 | 104 |
+| F statistics | 9.04*** | 9.32*** |
+| Adjusted R2	 | 0.38	 | 0.39 |
+| R2	 | 0.43	 | 0.44 |
+
+Notes:
+*   : 	p < 0.05
+**  : 	p < 0.01
+*** : 	p < 0.001
+
+For each additional square footage of frontage area, on average it increases the home price by $26.48 holding the house type, area of lot, Interior condition constant in Model I. It raises the price by $28.16 holding the other variables in Model II. If the house is on four lane road in Model I, on average it decreases by $11,394.39 holding the other variables constant. For each additional traffic counts in Model II, on average it decreases by $0.71 controlling for other variables.
+
+In Model I that includes a set of dummy variables for the house type, interior condition, four-lane road. The home price associated with two storeies house cost average $6,556.90 more than a one storey housecontrolling for other variables. In Model II, including a measure of the traffic amount, The home price associated with two storeies house cost average $1,369.40 less. But in both models, interior condition is not statiscally significant. The signs of the interior condition  are intuitive.
+
+As we estimate the home prices in order to come up with reasonable compensation, the R squared from the mutiple regression models table can be use as a measure to determine how well our models make predictions. From the table, not only all the statistically significant variables (area of lot, area of frontage, and dummy variables for the interior condition) increases the home price as anticipated. Our models are also acceptable because R squared in Model I is 0.43 and in Model II is 0.44.
+
+The city can use either Model I (lane sideroad) or Model II (traffic counts) to calculate compensation amounts for the affected homeowners. Model II is used to calculate compensation using data of traffic counts. Since the traffic counts on the newly paved four lane road are expected to reach 33,000 cars per day, the mathematical expression for Model II in calculating compensation can be expressed as below:
+ 
+Compensation (Model II) = 12,000.00 + 28.16 * (Loss frontage) + 0.71 * (33,000 - current traffic counts) 
+
+On the other hand, Model I is different from Model II in that it estimates house prices based on whether they are located on a typical residential road or four-lane road. Thus, mathematical expression in calculating compensation for house currently located on a two-lane road is: 
+ 
+Compensation (Model I) = 12,000.00 + 26.48 * (Loss frontage) + 11,394.39
+ 
+If a house is currently located on a four-lane road, then the following expression should be used.
+ 
+Compensation (Model I) = 12,000.00 + 26.48 * (Loss frontage)
+
+## 4. Code Structure
+
+### 4.1 Importing the dataset
 ```
 #Import Data
 
 #-- Set working directory: Session --> Set Working Directory --> To Source File Location
 dat <- read.csv("Springbank Drive Revised2.csv", header=TRUE)  
 
-#Print column names on the screen
 ```
 
-### 3.2 Printing colunm names
+### 4.2 Printing colunm names
 ```
+#Print column names on the screen
 colnames(dat) 
+```
+```
 ##  [1] "Property.."                         "Address"                           
 ##  [3] "Sales.Date"                         "HSETYPE"                           
 ##  [5] "One.and.a.Half.Storey"              "Two.Storey"                        
@@ -69,9 +119,10 @@ colnames(dat)
 ## [29] "Excellent.Interior.Condition"       "BSMTFINAREA"                       
 ## [31] "BI.AMEN.APPL"                       "LANESRD"                           
 ## [33] "TRAFCOUNT"                          "PRICE"
+```
 
+```
 #Extract variables to be used in the analyses
-
 PRICE <- dat[,"PRICE"]
 One.and.a.Half.Storey <- dat[,"One.and.a.Half.Storey"]
 Two.Storey <- dat[,"Two.Storey"]
@@ -91,11 +142,12 @@ LANESRD <- dat[,"LANESRD"]
 TRAFCOUNT <- dat[,"TRAFCOUNT"]
 ```
 
-### 3.1 Producing correlation matrix
+### 4.1 Producing correlation matrix
 ```
 #Generate correlation matrix
-
 cor(cbind(PRICE, One.and.a.Half.Storey, Two.Storey, LOTAREA, LFA, Average.Interior.Condition, Good.Interior.Condition, Excellent.Interior.Condition, LANESRD, TRAFCOUNT)) #cbind creates a matrix
+```
+```
 ##                                    PRICE One.and.a.Half.Storey  Two.Storey
 ## PRICE                         1.00000000           0.040971000 -0.06795999
 ## One.and.a.Half.Storey         0.04097100           1.000000000 -0.13124359
@@ -157,12 +209,14 @@ cor(cbind(PRICE, One.and.a.Half.Storey, Two.Storey, LOTAREA, LFA, Average.Interi
 ## TRAFCOUNT                     1.00000000
 ```
 
-### 3.3 Model 1
+### 4.3 Model 1
 ```
 #Regress price on lanesrd and others
 mod.1 <- lm(PRICE ~ One.and.a.Half.Storey + Two.Storey + LOTAREA + LFA + Average.Interior.Condition + Good.Interior.Condition + Excellent.Interior.Condition + LANESRD)
 #Present Parameter Estimates, Coefficient of Determination, etc.
 summary(mod.1)
+```
+```
 ## 
 ## Call:
 ## lm(formula = PRICE ~ One.and.a.Half.Storey + Two.Storey + LOTAREA + 
@@ -191,19 +245,15 @@ summary(mod.1)
 ## Residual standard error: 21770 on 95 degrees of freedom
 ## Multiple R-squared:  0.4323, Adjusted R-squared:  0.3844 
 ## F-statistic: 9.041 on 8 and 95 DF,  p-value: 3.722e-09
-#Extract standardized residuals and predicted values
-standardized.residual1 = rstandard(mod.1)
-predicted.saleprice1 <- predict(mod.1)
-
-plot(predicted.saleprice1,standardized.residual1)
-
 ```
-### 3.4 Model 2
+### 4.4 Model 2
 ```
 #Regress price on traffic and others
 mod.2 <- lm(PRICE ~ One.and.a.Half.Storey + Two.Storey + LOTAREA + LFA + Average.Interior.Condition + Good.Interior.Condition + Excellent.Interior.Condition + TRAFCOUNT)
 #Present Parameter Estimates, Coefficient of Determination, etc.
 summary(mod.2)
+```
+```
 ## 
 ## Call:
 ## lm(formula = PRICE ~ One.and.a.Half.Storey + Two.Storey + LOTAREA + 
@@ -231,71 +281,4 @@ summary(mod.2)
 ## Residual standard error: 21630 on 95 degrees of freedom
 ## Multiple R-squared:  0.4396, Adjusted R-squared:  0.3924 
 ## F-statistic: 9.316 on 8 and 95 DF,  p-value: 2.098e-09
-#Extract standardized residuals and predicted values
-standardized.residual2 = rstandard(mod.2)
-predicted.saleprice2 <- predict(mod.2)
-
-plot(predicted.saleprice2,standardized.residual2)
-
 ```
-
-## 4. Results and Evaluation
-### 4. Results and Evaluation of Model 1
-
-**Table 1:**
-| Attribute  | Mean | Standar Deviation |
-| ------------- | ------------- |------------- |
-| Area of lot (sqft)	 | 11,959.63	 | 9,593.12
-| Area of frontage (sqft)	 | 902.63	 | 255.55
-| Traffic counts (vehicles per day)	 | 20,221.15	 | 8,368.87
-| House type	 | NA	 | NA
-| One and a half Stories (%)	 | 0.09	 | 0.28
-| Two Stories (%)	 | 0.15	 | 0.36
-| Interior condition	 | NA	 | NA
-| Average interior condition (%)	 | 0.45	 | 0.5
-| Good interior condition (%)	 | 0.34	 | 0.47
-| Excellent interior condition (%)	 | 0.12	 | 0.32
-| Four lane road	 | 0.33	 | 0.47
-
-**Table 2:**
-| Description  | Model I Coeff.| Model I Std. error | Model II Coeff.| Model II Std. error | 
-| ------------- | ------------- |------------- |------------- |------------- |
-| Intercept	 | 86,024.87***	 | 11,194.30	 | 97,122.36***	 | 12,959.83 | 
-| One and a half Storey	 | 619.62	 | 8,588.25	 | -1,369.40	 | 8,487.06 | 
-| Two Storey	 | 6,556.90	 | 6,979.82	 | 6,227.66	 | 6,827.73 | 
-| Area of lot	 | 1.06***	 | 0.24	 | 0.94***	 | 0.24 | 
-| Area of frontage	 | 26.48**	 | 10.03	 | 28.16**	 | 9.83 | 
-| Average interior condition	 | 10,102.82	 | 7,980.86	 | 9,348.79	 | 7,913.32 | 
-| Good interior condition	 | 20,615.00*	 | 8,463.22	 | 20,556.86*	 | 8,406.02 | 
-| Excellent interior condition	 | 26,144.93*	 | 9,973.72	 | 26,155.99**	 | 9,895.76 | 
-| Four lane road	 | -11,394.39*	 | 5,191.42	 | NA	 | NA | 
-| Traffic counts	 | NA	 | NA	 | -0.71*	 | 0.29 | 
-
-**Table 2:**
-| Description  | Model I | Model I | 
-| ------------- | ------------- |------------- | 
-| Sample Size	 | 104	 | 104 |
-| F statistics | 9.04*** | 9.32*** |
-| Adjusted R2	 | 0.38	 | 0.39 |
-| R2	 | 0.43	 | 0.44 |
-
-The machine learning models were applied to the dataset, including Random Forests, Logistic Regression, Decision Trees, Naïve Bayes, SVM, and Neural Networks. Each model's performance was evaluated based on accuracy, precision, and recall for both training and test data. The computer specifications used for these computations were an 11th Gen Intel(R) Core (TM) i5-1135G7 @ 2.40GHz processor with 8.00 GB Installed RAM. The below summarized the results of each model.
-
-**Table 2:**
-| Model  | Accuracy (K-Fold=5) | Computation Time (seconds) | 
-| ------------- | ------------- |  ------------- |
-| 1. SVM  | 0.9941  | > 10,000 |
-| 2. Random Forests  |  0.9852  | 300 |
-| 3. Neural Networks  | 0.8953  | 250 |
-| 4. Decision Tree  | 0.8867  | 21 |
-| 5. Logistic Regression  | 0.6129 | < 1 |
-| 6. Naive Bayesian  | 0.6115  | < 1 |
-
-SVM, Random Forests, and Neural Networks emerged as the top-performing models based on mean scores from K-Fold Cross Validation. Random Forests stood out due to its relatively high accuracy and shorter computation time compared to SVM.
-
-## 5. References
-
-1.	Kim, Y. J., Choi, S., Briceno, S., & Mavris, D. (2016). A Deep Learning Approach to Flight Delay Prediction. In 35th Digital Avionics Systems Conference (DASC).
-2.	Chakrabarty, N. (2019). A Data Mining Approach to Flight Arrival Delay Prediction for American Airlines. In 9th Annual Information Technology, Electromechanical Engineering and Microelectronics Conference (IEMECON).
-
-
