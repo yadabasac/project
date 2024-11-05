@@ -40,6 +40,7 @@ Generally, the price of a home is based on different factors and owners’ decis
 
 We built two models. Model I estimates house prices based on whether they are located on a typical residential road or four-lane road and other variables. Model II uses traffic counts instead of a dummy variable showing whether a house located on a typical residential road or four-lane road. Variables in our models are chosen because we think that they are important in determining our house prices and they do not show any multicollinearity problems.
 
+### 3.1. Regression Results
 **Table 2:**
 | Description  | Model I Coeff.| Model I Std. error | Model II Coeff.| Model II Std. error | 
 | ------------- | ------------- |------------- |------------- |------------- |
@@ -66,6 +67,8 @@ Notes:
 *   : 	p < 0.05
 **  : 	p < 0.01
 *** : 	p < 0.001
+
+### 3.2. Explaining Results
 
 For each additional square footage of frontage area, on average it increases the home price by $26.48 holding the house type, area of lot, Interior condition constant in Model I. It raises the price by $28.16 holding the other variables in Model II. If the house is on four lane road in Model I, on average it decreases by $11,394.39 holding the other variables constant. For each additional traffic counts in Model II, on average it decreases by $0.71 controlling for other variables.
 
