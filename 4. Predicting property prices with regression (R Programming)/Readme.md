@@ -40,6 +40,8 @@ To come up with reasonable compensations for residential properties, we decided 
 Generally, the price of a home is based on different factors and owners’ decisions. For example, house size, lot size, home features, interior or exterior condition, location, etc. 
 
 ## 3. Code Structure
+
+### 3.1 Importing the dataset
 ```
 #Import Data
 
@@ -47,7 +49,10 @@ Generally, the price of a home is based on different factors and owners’ decis
 dat <- read.csv("Springbank Drive Revised2.csv", header=TRUE)  
 
 #Print column names on the screen
+```
 
+### 3.2 Printing colunm names
+```
 colnames(dat) 
 ##  [1] "Property.."                         "Address"                           
 ##  [3] "Sales.Date"                         "HSETYPE"                           
@@ -86,7 +91,10 @@ Good.Interior.Condition <- dat[,"Good.Interior.Condition"]
 Excellent.Interior.Condition <- dat[,"Excellent.Interior.Condition"]
 LANESRD <- dat[,"LANESRD"]
 TRAFCOUNT <- dat[,"TRAFCOUNT"]
+```
 
+### 3.1 Producing correlation matrix
+```
 #Generate correlation matrix
 
 cor(cbind(PRICE, One.and.a.Half.Storey, Two.Storey, LOTAREA, LFA, Average.Interior.Condition, Good.Interior.Condition, Excellent.Interior.Condition, LANESRD, TRAFCOUNT)) #cbind creates a matrix
@@ -149,7 +157,10 @@ cor(cbind(PRICE, One.and.a.Half.Storey, Two.Storey, LOTAREA, LFA, Average.Interi
 ## Excellent.Interior.Condition -0.16136359
 ## LANESRD                       0.73584439
 ## TRAFCOUNT                     1.00000000
+```
 
+### 3.3 Model 1
+```
 #Regress price on lanesrd and others
 mod.1 <- lm(PRICE ~ One.and.a.Half.Storey + Two.Storey + LOTAREA + LFA + Average.Interior.Condition + Good.Interior.Condition + Excellent.Interior.Condition + LANESRD)
 #Present Parameter Estimates, Coefficient of Determination, etc.
@@ -187,6 +198,46 @@ standardized.residual1 = rstandard(mod.1)
 predicted.saleprice1 <- predict(mod.1)
 
 plot(predicted.saleprice1,standardized.residual1)
+
+```
+### 3.4 Model 2
+```
+#Regress price on traffic and others
+mod.2 <- lm(PRICE ~ One.and.a.Half.Storey + Two.Storey + LOTAREA + LFA + Average.Interior.Condition + Good.Interior.Condition + Excellent.Interior.Condition + TRAFCOUNT)
+#Present Parameter Estimates, Coefficient of Determination, etc.
+summary(mod.2)
+## 
+## Call:
+## lm(formula = PRICE ~ One.and.a.Half.Storey + Two.Storey + LOTAREA + 
+##     LFA + Average.Interior.Condition + Good.Interior.Condition + 
+##     Excellent.Interior.Condition + TRAFCOUNT)
+## 
+## Residuals:
+##    Min     1Q Median     3Q    Max 
+## -49147 -11454  -4083   8775 107709 
+## 
+## Coefficients:
+##                                Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)                  97122.3644 12959.8305   7.494 3.45e-11 ***
+## One.and.a.Half.Storey        -1369.4012  8487.0637  -0.161 0.872159    
+## Two.Storey                    6227.6593  6827.7330   0.912 0.364018    
+## LOTAREA                          0.9439     0.2434   3.878 0.000194 ***
+## LFA                             28.1570     9.8275   2.865 0.005132 ** 
+## Average.Interior.Condition    9348.7954  7913.3229   1.181 0.240393    
+## Good.Interior.Condition      20556.8588  8406.0192   2.445 0.016307 *  
+## Excellent.Interior.Condition 26155.9874  9895.7640   2.643 0.009608 ** 
+## TRAFCOUNT                       -0.7103     0.2869  -2.476 0.015046 *  
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 21630 on 95 degrees of freedom
+## Multiple R-squared:  0.4396, Adjusted R-squared:  0.3924 
+## F-statistic: 9.316 on 8 and 95 DF,  p-value: 2.098e-09
+#Extract standardized residuals and predicted values
+standardized.residual2 = rstandard(mod.2)
+predicted.saleprice2 <- predict(mod.2)
+
+plot(predicted.saleprice2,standardized.residual2)
 
 ```
 
