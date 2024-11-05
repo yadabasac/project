@@ -19,6 +19,7 @@ A city had a plan to extend a local road from 2 lanes to 4 lanes. However, doing
 
 The dataset in this project can be downloaded from  [here.](https://github.com/yadabasac/project/blob/main/4.%20Predicting%20property%20prices%20with%20regression%20(R%20Programming)/1.%20Dataset/Property%20features%20dataset.csv)
 
+Below is the exploratory data analysis of the attributes we will use to predict a property price.
 **Table 1:**
 | Attribute  | Mean | Standar Deviation |
 | ------------- | ------------- |------------- |
@@ -33,12 +34,6 @@ The dataset in this project can be downloaded from  [here.](https://github.com/y
 | Good interior condition (%)	 | 0.34	 | 0.47
 | Excellent interior condition (%)	 | 0.12	 | 0.32
 | Four lane road	 | 0.33	 | 0.47
-
-
-
-## 2.3 Exploratory Data Analysis
-
-![image](https://github.com/user-attachments/assets/ef5004da-67c3-4011-a7f3-4ab11eab81ca)
 
 ## 3. Code Structure
 
