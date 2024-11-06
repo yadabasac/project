@@ -35,7 +35,7 @@ Maximum likelihood estimation is used to obtain the coefficients of each model. 
 We also calculate the probability for each applicant using the estimated coefficients of each model. Then, we define the independent variable, mortgage lending decision, as ‘Approved’ if the predicted probability is at least .5, and ‘Disapproved’ otherwise. We report the percentage correctly predicted using this way of calculation.
 
 ## 3. Data
-The dataset used in this project can be downloaed [here.](https://github.com/yadabasac/project/blob/main/5.%20Are%20financial%20institutions%20providing%20mortgages%20biased%20against%20some%20races%3F%20(R%20Programming/1.%20Dataset.csv)
+The dataset used in this project can be downloaed [here.](https://github.com/yadabasac/project/blob/main/5.%20Are%20financial%20institutions%20providing%20mortgages%20biased%20against%20some%20races%3F%20(R%20Programming)/1.%20Dataset.csv)
 
 ## 3. Results and Evaluation
 
