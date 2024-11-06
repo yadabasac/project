@@ -11,7 +11,7 @@
 
 ## 1. Project Overview
 
-A city had a plan to extend a local road from 2 lanes to 4 lanes. However, doing that would affect some of the properties in that area since they would be required to not only give up some of their spaces to the city, but also, they would have to experience the increase in traffic. Therefore, the city asked for help to determine those property prices, as they needed to give compensation to those people who would be affected by the construction. If the city was challenged in court over the compensation claims, we would need to determine the loss of market value for each homeowner and defend our strategy.
+In this project, we aim to use data gathered in Boston in 1990 to determine whether mortgage lenders discriminate against some races. The question we seek to answer is: Can we conclude that financial institutions providing mortgages show bias against races? In summary, our findings indicate that minorities are subject to discrimination, which we will dive into further below.
 
 
 ## 2. Data
