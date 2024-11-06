@@ -24,7 +24,6 @@ Our main purpose is to assess whether mortgage lending institutions discriminate
 
 
 The abbreviations of the above independent variables are defined as below:
-
 MARRIED = 1 if married, = 0 otherwise
 GDLIN = 1 if credit history meets guidelines, = 0 otherwise
 OBRAT = other obligations as a percent of total income
@@ -33,9 +32,10 @@ HISPAN = 1 if Hispanic, = 0 otherwise
 LOANPRC = loan amount/purchase price
 
 Maximum likelihood estimation is used to obtain the coefficients of each model. Thus, our estimated coefficients maximize the log-likelihood of each regression. To evaluate the goodness-of-fit of each model, we report the pseudo R-squared. There are various ways of calculating pseudo R-squared but we use the following formula: 1 – Lur / L0, where Lur is the log-likelihood function for the estimated model and L0 is the log-likelihood function in the model with only an intercept.   
-
 We also calculate the probability for each applicant using the estimated coefficients of each model. Then, we define the independent variable, mortgage lending decision, as ‘Approved’ if the predicted probability is at least .5, and ‘Disapproved’ otherwise. We report the percentage correctly predicted using this way of calculation.
 
+## 3. Data
+The dataset used in this project can be downloaed [here.](https://github.com/yadabasac/project/blob/main/5.%20Are%20financial%20institutions%20providing%20mortgages%20biased%20against%20some%20races%3F%20(R%20Programming/1.%20Dataset.csv)
 
 ## 3. Results and Evaluation
 
