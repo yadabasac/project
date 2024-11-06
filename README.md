@@ -6,7 +6,7 @@ This project focuses on predicting flight delays for six major US airlines using
 
 For details, [click here.](https://github.com/yadabasac/project/blob/main/1.%20Predicting%20Flight%20Delays%20(Python%20%26%20R)/README.md)
 
-## 2. Pet Sitting Database (SQL and Tableau)
+## 2. How should we improve pet sitting services? (Data analysis, SQL and Tableau)
 
 ![overnight-pet-sitting 2205201856012](https://github.com/user-attachments/assets/6b7c8d56-9015-4868-892b-0be8fa468b10)
 
