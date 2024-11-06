@@ -44,10 +44,6 @@ The dataset used in this project can be downloaded [here.](https://github.com/ya
 |Other obligations as a percent of total income (%)	|0.00	|95.00	|32.37	|33.00	|8.25
 
 **Table 2: Descriptive Statistics for Qualitative Variables**
-| Variables	| Minimum	| Maximum	| Mean	| Median	| Standard Deviation |
-| ------------- | ------------- |------------- |------------- |------------- |------------- | 
-| Loan amount/purchase price (%)	|2.11  	|100	|76.08	|80.00	|16.76
-|Other obligations as a percent of total income (%)	|0.00	|95.00	|32.37	|33.00	|8.25
 | Variable	| Proportion |
 | ------------- | ------------- |
 |Race (%) |	|
@@ -58,7 +54,7 @@ The dataset used in this project can be downloaded [here.](https://github.com/ya
 |   Single	| 34.20|
 |   Married	| 65.80|
 |Approval Rate (%) |	|
-|   Approved	||87.90|
+|   Approved	| 87.90|
 |   Disapproved	|12.10|
 |Credit history meets guidelines (%) | |	
 |   Yes	| 91.40|
