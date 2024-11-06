@@ -47,21 +47,21 @@ The dataset used in this project can be downloaded [here.](https://github.com/ya
 | Variable	| Proportion |
 | ------------- | ------------- |
 |Race (%) |	|
-|   White	| 84.70|
-|   Black	| 9.90|
-|   Hispanic	| 5.40|
+|   ---White	| 84.70|
+|   ---Black	| 9.90|
+|   ---Hispanic	| 5.40|
 |Marital Status (%)| |	
-|   Single	| 34.20|
-|   Married	| 65.80|
+|   ---Single	| 34.20|
+|   ---Married	| 65.80|
 |Approval Rate (%) |	|
-|   Approved	| 87.90|
-|   Disapproved	|12.10|
+|   ---Approved	| 87.90|
+|   ---Disapproved	|12.10|
 |Credit history meets guidelines (%) | |	
-|   Yes	| 91.40|
-|   No	| 8.60|
+|   ---Yes	| 91.40|
+|   ---No	| 8.60|
 |Gender (%) |	|
-|   Male	| 81.40|
-|   Female	| 18.60|
+|   ---Male	| 81.40|
+|   ---Female	| 18.60|
 | Sample Size	| 1,937|
 
 
