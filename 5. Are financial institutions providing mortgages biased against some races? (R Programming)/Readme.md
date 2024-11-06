@@ -3,9 +3,10 @@
 ## Contents
 
 1. Project Overview
-2. Data
-3. Results and Evaluation
-4. Code Structure
+2. Methodology
+3. Data
+4. Results and Evaluation
+5. Code Structure
 
 ![2](https://github.com/user-attachments/assets/3a03aba1-ce77-46e4-b59c-bb55f67e2341)
 
@@ -15,27 +16,26 @@
 In this project, we aim to use data gathered in Boston in 1990 to determine whether mortgage lenders discriminate against some races. The question we seek to answer is: Can we conclude that financial institutions providing mortgages show bias against races? In summary, our findings indicate that minorities are subject to discrimination, which we will dive into further below.
 
 
-## 2. Data
+## 2. Methodology
 
-The dataset in this project can be downloaded from  [here.](https://github.com/yadabasac/project/blob/main/4.%20Predicting%20property%20prices%20with%20regression%20(R%20Programming)/1.%20Dataset/Property%20features%20dataset.csv)
+Our main purpose is to assess whether mortgage lending institutions discriminate against minorities. We use both logistic and probit regressions to predict the probability of mortgage loan approval for each race: Whites, Blacks, and Hispanics. The formula for our regression is:
 
-Below is the exploratory data analysis of the attributes we will use to predict a property price.
-**Table 1:**
-| Attribute  | Mean | Standar Deviation |
-| ------------- | ------------- |------------- |
-| Area of lot (sqft)	 | 11,959.63	 | 9,593.12
-| Area of frontage (sqft)	 | 902.63	 | 255.55
-| Traffic counts (vehicles per day)	 | 20,221.15	 | 8,368.87
-| One and a half Stories (%)	 | 0.09	 | 0.28
-| Two Stories (%)	 | 0.15	 | 0.36
-| Average interior condition (%)	 | 0.45	 | 0.5
-| Good interior condition (%)	 | 0.34	 | 0.47
-| Excellent interior condition (%)	 | 0.12	 | 0.32
-| Four lane road	 | 0.33	 | 0.47
+![Screenshot (223)](https://github.com/user-attachments/assets/9cf3e556-2fc2-4108-ae8b-0f1962a7ee83)
 
-To come up with reasonable compensations for residential properties, we decided to use the multiple regression model. It gives the most accurate numbers by using a formula to calculate prices while the traditional methods allow different evaluators to say different prices.
 
-Generally, the price of a home is based on different factors and owners’ decisions. For example, house size, lot size, home features, interior or exterior condition, location, etc. 
+The abbreviations of the above independent variables are defined as below:
+
+MARRIED = 1 if married, = 0 otherwise
+GDLIN = 1 if credit history meets guidelines, = 0 otherwise
+OBRAT = other obligations as a percent of total income
+BLACK = 1 if black, = 0 otherwise
+HISPAN = 1 if Hispanic, = 0 otherwise
+LOANPRC = loan amount/purchase price
+
+Maximum likelihood estimation is used to obtain the coefficients of each model. Thus, our estimated coefficients maximize the log-likelihood of each regression. To evaluate the goodness-of-fit of each model, we report the pseudo R-squared. There are various ways of calculating pseudo R-squared but we use the following formula: 1 – Lur / L0, where Lur is the log-likelihood function for the estimated model and L0 is the log-likelihood function in the model with only an intercept.   
+
+We also calculate the probability for each applicant using the estimated coefficients of each model. Then, we define the independent variable, mortgage lending decision, as ‘Approved’ if the predicted probability is at least .5, and ‘Disapproved’ otherwise. We report the percentage correctly predicted using this way of calculation.
+
 
 ## 3. Results and Evaluation
 
