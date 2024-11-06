@@ -1,4 +1,4 @@
-## 1. Predicting Flight Delays in the United States (Python & R)
+## 1. Will my flight be late? (Machine Learning & Python & R)
 
 ![image](https://github.com/user-attachments/assets/527b06c0-97db-45d2-aa3b-4f9e772eb2b1)
 
@@ -17,7 +17,7 @@ A pet sitting database will enable us to offer a more personalized and tailored 
 For details, [click here.](https://github.com/yadabasac/project/blob/main/2.%20Pet%20Sitting%20(SQL%20%26%20Tableau)/README.md)
 
 
-## 3. Estimating Optimal Cash Levels (SAS)
+## 3. How much cash should my company hold? (Regression & SAS)
 
 ![Screenshot of a cash level](https://miro.medium.com/v2/resize:fit:828/format:webp/1*bL3IO7qjRrJEBnNUbXwWTA.png)
 
@@ -25,7 +25,7 @@ Our model aids management teams in determining a firm's optimal cash level, tail
 
 For details, [click here.](https://github.com/yadabasac/project/blob/main/3.%20Estimating%20Optimal%20Cash%20Levels%20(SAS)/README.md)
 
-## 4. Predicting property prices (R Programming
+## 4. How much should I pay for this house? (Regression & R Programming)
 
 ![1](https://github.com/user-attachments/assets/c5881dff-f919-402d-a7b2-827372436b8b)
 
