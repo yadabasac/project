@@ -38,12 +38,6 @@ We also calculate the probability for each applicant using the estimated coeffic
 The dataset used in this project can be downloaded [here.](https://github.com/yadabasac/project/blob/main/5.%20Are%20financial%20institutions%20providing%20mortgages%20biased%20against%20some%20races%3F%20(R%20Programming)/1.%20Dataset.csv)
 
 **Table 1: Descriptive Statistics for Quantitative Variables**
-| Description  | Model I | Model I | 
-| ------------- | ------------- |------------- | 
-| Sample Size	 | 104	 | 104 |
-| F statistics | 9.04*** | 9.32*** |
-| Adjusted R2	 | 0.38	 | 0.39 |
-| R2	 | 0.43	 | 0.44 |
 | Variables	| Minimum	| Maximum	| Mean	| Median	| Standard Deviation |
 | ------------- | ------------- |------------- |------------- |------------- |------------- | 
 | Loan amount/purchase price (%)	|2.11  	|100	|76.08	|80.00	|16.76
