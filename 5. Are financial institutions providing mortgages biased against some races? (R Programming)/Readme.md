@@ -6,8 +6,9 @@
 2. Data
 3. Results and Evaluation
 4. Code Structure
-   
-![1](https://github.com/user-attachments/assets/c5881dff-f919-402d-a7b2-827372436b8b)
+
+![2](https://github.com/user-attachments/assets/3a03aba1-ce77-46e4-b59c-bb55f67e2341)
+
 
 ## 1. Project Overview
 
