@@ -1,4 +1,4 @@
-# Will my flight be late? (Machine Learning & Python)
+# Will My Flight Be Late? (Machine Learning & Python)
 
 ## Contents
 
