@@ -1,4 +1,4 @@
-# Predicting property prices with regression (R Programming)
+# How Much Should I Pay For This House? (R Programming)
 
 ## Contents
 
