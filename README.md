@@ -33,7 +33,7 @@ A city had a plan to extend a local road from 2 lanes to 4 lanes. However, doing
 
 For details, [click here.](https://github.com/yadabasac/project/blob/main/4.%20How%20much%20should%20I%20pay%20for%20this%20house%3F%20(Regression%20&%20R%20Programming)/Readme.md)
 
-## Are financial institution providing mortgages biased against some races?
+## 5. Are financial institution providing mortgages biased against some races?
 
 ![2](https://github.com/user-attachments/assets/3a03aba1-ce77-46e4-b59c-bb55f67e2341)
 
